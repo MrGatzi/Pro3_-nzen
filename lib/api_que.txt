@@ -1,7 +1,0 @@
-   $http.post('PHP/Cache_and_API_Request.php', {data1} ).
-		success(function(data, status, config) {
-			$scope.valid=data;
-			})
-		.error(function(data, status, headers, config) {
-			alert("fail");
-		});
