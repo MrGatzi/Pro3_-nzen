@@ -12,7 +12,7 @@ $InstanceCache = CacheManager::getInstance('files');
 $key = "crypto";
 $CachedString = $InstanceCache->getItem($key);
 if (is_null($CachedString->get())) {
-	$url = "https://api.coinmarketcap.com/v1/ticker/";
+	$url = "https://api.coinmarketcap.com/v1/ticker/?limit=10";
 	$ch  = curl_init();
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -20,7 +20,7 @@ if (is_null($CachedString->get())) {
     $result = curl_exec($ch);
     curl_close($ch);
    
-    $CachedString->set($result)->expiresAfter(50000);
+    $CachedString->set($result)->expiresAfter(500);
     $InstanceCache->save($CachedString);
 	echo $CachedString->get();
 } else {
