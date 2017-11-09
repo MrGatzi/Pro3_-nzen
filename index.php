@@ -9,3 +9,4 @@ echo $twig->render('test.html', array(
     'user' => 'John Doe',
     'bitcoins' => 1000
 ));
+
