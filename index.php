@@ -5,3 +5,7 @@ require 'vendor/autoload.php';
 $loader = new Twig_Loader_Filesystem('templates');
 $twig = new Twig_Environment($loader);
 
+echo $twig->render('test.html', array(
+    'user' => 'John Doe',
+    'bitcoins' => 1000
+));
