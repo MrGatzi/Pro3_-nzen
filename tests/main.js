@@ -6,8 +6,12 @@ $(document).ready(function(){
     $.get("api_que.php", function(data, status){
 	   data1=JSON.parse(data);
        console.log(data1);
+	   var symbolsArr=[];
 	   for (index = 0; index < data1.length; ++index) {
-			console.log(data1[index]);
+			symbolsArr[index]=data1[index].symbol;
+		   
+		   
+			//console.log(data1[index]);
 			var div = document.createElement("div");
 			div.style.width = "250px";
 			div.style.height = "30px";
@@ -20,6 +24,8 @@ $(document).ready(function(){
 			option.text = data1[index].symbol;
 			x.add(option);
 		}
+		
+		console.log(symbolsArr);
     });
 });
 function myFunction1() {
