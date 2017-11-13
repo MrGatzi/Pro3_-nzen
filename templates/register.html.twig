@@ -1,0 +1,40 @@
+{% include 'head.twig' %}
+
+<title>Create your portfolio</title>
+</head>
+
+<body>
+<main class="main">
+    <div class="image">
+        <img src="../public/img/image.png">
+    </div>
+    <div>
+        <form class="register">
+            <fieldset class="name">
+                <div class="col-sm-6 form-group">
+                    <label>FIRST NAME</label>
+                    <input type="text" name="firstName" placeholder="YOUR FIRST NAME" class="form-control">
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label>LAST NAME</label>
+                    <input type="text" name="lastName" placeholder="YOUR LAST NAME" class="form-control">
+                </div>
+            </fieldset>
+            <fieldset class="email">
+                <label>EMAIL ADDRESS</label>
+                <input type="text" name="email" placeholder="YOUR EMAIL ADDRESS" class="form-control">
+                <label>CONFORM EMAIL ADDRESS</label>
+                <input type="text" name="confirmEmail" placeholder="CONFIRM YOUR EMAIL ADDRESS" class="form-control">
+            </fieldset>
+            <fieldset class="password">
+                <label>PASSWORD</label>
+                <input type="password" name="password" placeholder="YOUR PASSWORD" class="form-control">
+                <label>CONFIRM PASSWORD</label>
+                <input type="password" name="confirmPassword" placeholder="CONFIRM YOUR PASSWORD" class="form-control">
+            </fieldset>
+            <button class="create" type="button" name="create">CREATE MY PORTFOLIO</button>
+        </form>
+        <button class="login" type="button" name="login">ALREADY HAVE A PORTFOLIO? SIGN IN</button>
+    </div>
+</main>
+</body>
