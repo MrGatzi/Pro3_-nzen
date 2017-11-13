@@ -1,0 +1,60 @@
+{% include 'head.twig' %}
+<title>µnzen</title>
+</head>
+
+<body>
+    <main class="main">
+        <header>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="about.php">ABOUT</a></li>
+                    <li class="logo"><img src="../public/img/logo.png"></li>
+                    <li id="login">
+                        <a id="login-trigger" href="#">SIGN IN</a>
+                        <div id="login-content">
+                            <form>
+                                <fieldset id="input">
+                                    <input id="email" type="email" name="email" placeholder="EMAIL ADDRESS" required>
+                                    <input id="password" type="password" name="password" placeholder="PASSWORD" required>
+                                </fieldset>
+                                <fieldset id="action">
+                                    <input id="submit" type="submit" value="SIGN IN">
+                                    <label><input type="checkbox" checked="checked">Keep me sign in</label>
+                                </fieldset>
+                            </form>
+                            <div id="register"><a href="register.php">Create a portfolio</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div id="calculator">
+            <form>
+                <fieldset id="portfolio">
+                    <select name="currency">
+                        <option value="BTC" selected>BTC</option>
+                        <!-- TODO: Optionen -> Währungen einfügen -->
+                    </select>
+                    <input class="amount" type="number" name="amount" value="0.00">
+                    <button class="remove" type="button" name="remove">X</button>
+                </fieldset>
+                <fieldset id="add">
+                    <button class="add" type="button" name="add">+</button>
+                </fieldset>
+                <!-- Line -->
+                <fieldset id="totalSum">
+                    <select name="money">
+                        <option value="USD" selected>USD</option>
+                        <!-- TODO: Optionen -> Währungen einfügen -->
+                    </select>
+                    <div>
+                       <!-- <p>{{ TotalSum }}</p> -->
+                    </div>
+                </fieldset>
+                <fieldset id="save">
+                    <button class="save" type="button" name="save">SAVE</button>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+</body>
