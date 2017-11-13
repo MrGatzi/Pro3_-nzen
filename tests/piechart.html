@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+<meta charset="utf-8">
+<title>Simple Test</title>
+</head>
+<body>
+<div id="canvas-holder" style="width:40%">
+<canvas id="myChart" width="800" height="450" ></canvas>
+</div>
+
+<script>
+var vlabels =["BTC","LTC","DOGE","XRP"];
+var vvalues =[120,30,90,50];
+var ctx = document.getElementById('myChart').getContext('2d');
+ctx.width  = 400;
+ctx.height = 300; 
+var myChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: vlabels,
+    datasets: [{
+      label: 'User',
+      data: vvalues,
+	  backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+    }]
+  }
+});</script>
+</body>
+</html>
