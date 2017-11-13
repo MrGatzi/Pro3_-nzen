@@ -2,11 +2,12 @@
 ob_start();
 
 include 'config.php';
+require 'includes/functions.php';
 include 'includes/loginform.php';
 
 // Define $myemail and $mypassword
 $email = $_POST['myemail'];
-$password = $_POST['$mypassword'];
+$password = $_POST['mypassword'];
 
 // Prevent MySQL injection
 $email = stripslashes($email);

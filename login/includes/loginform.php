@@ -4,12 +4,11 @@ class LoginForm extends DbConn
 {
     public function checkLogin($myemail, $mypassword){
         $conf = new GlobalConf;
-        $ip_address = $conf->ip_address;
 
         try {
 
             $db = new DbConn;
-            $tbl_members = $db->tbl_members;
+            $tbl_user = $db->tbl_user;
             $err = '';
 
         } catch (PDOException $e) {
@@ -18,7 +17,7 @@ class LoginForm extends DbConn
 
         }
 
-        $stmt = $db->conn->prepare("SELECT * FROM ".$tbl_members." WHERE email = :myemail");
+        $stmt = $db->conn->prepare("SELECT * FROM ".$tbl_user." WHERE email = :myemail");
         $stmt->bindParam(':myemail', $myemail);
         $stmt->execute();
 
@@ -40,7 +39,6 @@ class LoginForm extends DbConn
                 $success = "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>You need to verify your email first</div>";
 
             } else {
-
                 // Wrong username or password
                 $success = "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>Wrong Username or Password</div>";
 
