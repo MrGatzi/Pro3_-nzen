@@ -5,16 +5,21 @@ $(document).ready(function(){
     $.get("tests/api_que.php", function(data, status){
         data1=JSON.parse(data);
         console.log(data1);
-        var symbolsArr=[];
         for (index = 0; index < data1.length; ++index) {
-            symbolsArr[index]=data1[index].symbol;
-
-            var parent = document.getElementsByClassName('crypto')[0];
-            var option = document.createElement("option");
-            option.text = data1[index].symbol;
-            parent.add(option);
+            $('[name="currency"]').append($('<option>', {
+                value: data1[index].price_usd,
+                text: data1[index].symbol
+            }));
         }
+    });
+    $.get("tests/fiat_api.php", function(data, status){
+        data1=JSON.parse(data);
+        $.each(data1.rates, function( key, value ) {
 
-        console.log(symbolsArr);
+            $('[name="money"]').append($('<option>', {
+                value: value,
+                text: key
+            }));
+        });
     });
 });
