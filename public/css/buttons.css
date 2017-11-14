@@ -1,0 +1,29 @@
+.up {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    transition: 0.25s;
+    border-color: #30e2e3;
+    color: #fff;
+}
+
+.up:hover,
+.up:focus {
+    box-shadow: inset 0 -3.25em 0 0 #30e2e3;
+}
+
+.remove {
+    background: none;
+    border: none;
+    border-color: #30e2e3;
+    color: #fff;
+    opacity: 0.1;
+}
+
+.remove:hover,
+.remove:focus {
+    opacity: 0.7;
+}

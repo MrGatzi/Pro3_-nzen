@@ -3,63 +3,78 @@
 </head>
 
 <body>
-<div class="space"></div>
-<div class="row">
-    <div class="col-lg-1"></div>
-    <main class="main col-lg-10 col-sm-12">
-        <header>
-            <nav>
-                <ul class="navbar">
-                    <li><a href="about.php">ABOUT</a></li>
-                    <li class="logo"><img src="../public/img/logo.png"></li>
-                    <li id="login">
-                        <a id="login-trigger" href="#">SIGN IN</a>
-                        <div id="login-content">
-                            <form>
-                                <fieldset id="input">
-                                    <input id="email" type="email" name="email" placeholder="EMAIL ADDRESS" required>
-                                    <input id="password" type="password" name="password" placeholder="PASSWORD"
-                                           required>
-                                </fieldset>
-                                <fieldset id="action">
-                                    <input id="submit" type="submit" value="SIGN IN">
-                                    <label><input type="checkbox" checked="checked">Keep me signed in</label>
-                                </fieldset>
-                            </form>
-                            <div id="register"><a href="register.php">Create a portfolio</a></div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <div id="calculator">
-            <form>
-                <fieldset id="portfolio">
-                    <select name="currency">
-                        <option value="BTC" selected>BTC</option>
-                        <!-- TODO: Optionen -> Währungen einfügen -->
-                    </select>
-                    <input class="amount" type="number" name="amount" value="0.00">
-                    <button class="remove" type="button" name="remove">X</button>
-                </fieldset>
-                <fieldset id="add">
-                    <button class="add" type="button" name="add">+</button>
-                </fieldset>
-                <!-- Line -->
-                <fieldset id="totalSum">
+<main class="offset-1 col-10 offset-1">
+    <div class="container">
+        <div class="row">
+            <div class="space col-12"></div>
+        </div>
+    </div>
+
+    <header>
+        <nav class="container">
+            <ul class="navbar row">
+                <li class="col-4"><a href="about.php">ABOUT</a></li>
+                <li class="logo col-4">µ</li>
+                <li class="col-4" id="login">
+                    <a id="login-trigger" href="#">SIGN IN</a>
+                    <div id="login-content">
+                        <form method="post" action="../login/checklogin.php">
+                            <fieldset id="input">
+                                <input id="email" type="email" name="email" placeholder="EMAIL ADDRESS"
+                                       required>
+                                <input id="password" type="password" name="password" placeholder="PASSWORD"
+                                       required>
+                            </fieldset>
+                            <fieldset id="action">
+                                <input id="submit" type="submit" value="SIGN IN">
+                                <label><input type="checkbox" checked="checked">Keep me signed in</label>
+                            </fieldset>
+                        </form>
+                        <div id="register"><a href="register.php">Create a portfolio</a></div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr class="line">
+
+
+    <form action="../login/register.php" method="post">
+        <fieldset>
+            <div id="portfolio" class="container">
+                <div class="row newCurrency">
+                    {% include 'currency.twig' %}
+                </div>
+                <div class="row newCurrency">
+                    {% include 'currency.twig' %}
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset id="add">
+            <button class="up add" type="button" name="add">ADD</button>
+        </fieldset>
+
+        <hr class="line">
+
+        <fieldset id="totalSum">
+            <div class="container">
+                <div class="row">
                     <select name="money">
                         <option value="USD" selected>USD</option>
                         <!-- TODO: Optionen -> Währungen einfügen -->
                     </select>
-                    <div>
-                        <!-- <p>{{ TotalSum }}</p> -->
-                    </div>
-                </fieldset>
-                <fieldset id="save">
-                    <button class="save" type="button" name="save">SAVE</button>
-                </fieldset>
-            </form>
-        </div>
-    </main>
-</div>
+                    <div class="col 4"><p>{{ TotalSum }}</p></div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset id="save">
+            <button class="up" type="submit" name="save">SAVE</button>
+        </fieldset>
+    </form>
+
+
+</main>
 </body>
