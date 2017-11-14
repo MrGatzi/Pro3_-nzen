@@ -26,7 +26,6 @@ class LoginForm extends DbConn
 
             // Checks password entered against db password hash
             if (password_verify($mypassword, $result['password']) && $result['verified'] == '1') {
-
                 // Register $myemail, $mypassword and return "true"
                 $success = 'true';
                 session_start();
@@ -41,7 +40,6 @@ class LoginForm extends DbConn
             } else {
                 // Wrong username or password
                 $success = "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>Wrong Username or Password</div>";
-
             }
 
         return $success;

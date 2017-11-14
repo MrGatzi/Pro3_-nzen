@@ -20,6 +20,13 @@ $resp = new RespObj($email, $loginCtl->checkLogin($email, $password));
 $jsonResp = json_encode($resp);
 echo $jsonResp;
 
-unset($resp, $jsonResp);
-ob_end_flush();
+echo $resp;
+if($resp = 'true'){
+    echo 'true';
+    unset($resp, $jsonResp);
+    ob_end_flush();
+    header('Location:../index.php');
+    exit();
+}
+
 
