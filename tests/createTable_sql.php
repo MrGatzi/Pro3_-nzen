@@ -15,10 +15,11 @@ if (!$conn) {
 }
 echo "Connected successfully";
 
-$sql = "CREATE TABLE UserValues (
+$sql = "CREATE TABLE UserValues2 (
 id_user int UNSIGNED, 
 currency VARCHAR(3) NOT NULL,
-c_values float(53) NOT Null
+c_values float(53) NOT Null,
+date DATE
 );";
 
 if (mysqli_query($conn, $sql)) {
