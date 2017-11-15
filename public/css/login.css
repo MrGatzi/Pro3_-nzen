@@ -2,11 +2,11 @@ html.login-active, body.login-active {
     overflow: hidden;
 }
 
-#form {
+#loginForm {
     color: #3d3d3d;
 }
 
-#form {
+#loginForm {
     position: fixed;
     display: table;
     height: 100%;
@@ -17,33 +17,33 @@ html.login-active, body.login-active {
     z-index: 1;
 }
 
-#form.log {
+#loginForm.log {
     z-index: 0;
     transform: scale(1);
 }
-#form.log .loginBox {
+#loginForm.log .loginBox {
     background: rgba(0, 0, 0, 0.5);
 }
-#form.log .loginBox .login-content {
+#loginForm.log .loginBox .login-content {
     animation: moveUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
-#form.log + .content {
+#loginForm.log + .content {
     z-index: 1;
     animation: slideUpLarge 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
-#form.log.out .loginBox .login-content {
+#loginForm.log.out .loginBox .login-content {
     animation: moveDown 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
-#form.log.out + .content {
+#loginForm.log.out + .content {
     animation: slideDownLarge 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
-#form .loginBox {
+#loginForm .loginBox {
     display: table-cell;
     background: rgba(0, 0, 0, 0.8);
     text-align: center;
     vertical-align: middle;
 }
-#form .loginBox .login-content {
+#loginForm .loginBox .login-content {
     background: rgba(255, 255, 255, 1);
     padding: 40px;
     display: inline-block;
@@ -52,14 +52,14 @@ html.login-active, body.login-active {
     position: relative;
 }
 
-#form .loginBox .login-content .modal-svg {
+#loginForm .loginBox .login-content .modal-svg {
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     border-radius: 3px;
 }
-#form .loginBox .login-content .modal-svg rect {
+#loginForm .loginBox .login-content .modal-svg rect {
     stroke: #fff;
     stroke-width: 2px;
     stroke-dasharray: 778;

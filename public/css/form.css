@@ -1,20 +1,20 @@
-.form a {
+#loginForm a {
     color: #1c1c1c;
     text-decoration: none;
 }
 
-.form a:hover {
+#loginForm a:hover {
     color: #30e2e3;
     text-decoration: none;
 }
 
-.form fieldset {
+#loginForm fieldset {
     display: block;
     justify-content: center;
     padding-top: 30px;
     text-align: center;
 }
-.form label {
+#loginForm label {
     color: #777777;
     cursor: text;
     font-size: 20px;
@@ -24,7 +24,7 @@
     transform: translateY(-50px);
     transition: all 0.3s;
 }
-.form fieldset input {
+#loginForm fieldset input {
     box-sizing: border-box;
     justify-content: center;
     background-color: transparent;
@@ -38,12 +38,12 @@
     width: 180px;
 }
 
-.form fieldset input:focus {
+#loginForm fieldset input:focus {
     max-width: 80%;
     width: 250px;
 }
 
-.form fieldset input:focus + label {
+#loginForm fieldset input:focus + label {
     color: #1c1c1c;
     font-size: 18px;
     -moz-transform: translateY(-74px);
@@ -51,7 +51,7 @@
     -webkit-transform: translateY(-74px);
     transform: translateY(-74px);
 }
-#form fieldset input:valid + label {
+#loginform fieldset input:valid + label {
     font-size: 18px;
     -moz-transform: translateY(-74px);
     -ms-transform: translateY(-74px);
@@ -59,7 +59,7 @@
     transform: translateY(-74px);
 }
 
-.form .up {
+#loginForm .up {
     color: #1c1c1c;
     margin-bottom: 10px;
 }
