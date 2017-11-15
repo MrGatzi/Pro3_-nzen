@@ -33,3 +33,50 @@
     opacity: 1;
     color: #30e2e3;
 }
+
+.link {
+    border: 0;
+    background: transparent;
+    padding-right: 25px;
+    padding-left: 25px;
+    color: #ffffff;
+    opacity: 0.2;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+    border: 0;
+    opacity: 1;
+    color: #30e2e3;
+    text-decoration: none;
+}
+
+.none {
+    border: 0;
+    background: none;
+    color: #30e2e3;
+}
+
+.none:hover,
+.none:focus {
+    border: 0;
+    color: white;
+}
+
+.reverse {
+    border: 0;
+    background: none;
+    color: white;
+    margin-top: 30px;
+}
+
+.reverse:hover,
+.reverse:focus {
+    border: 0;
+    color: #30e2e3;
+}
+
+.hidden {
+    display: none;
+}

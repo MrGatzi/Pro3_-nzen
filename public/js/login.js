@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
     $('#login').click(function(){
-        $('#loginForm').removeAttr('class').addClass('log');
+        $('#form').removeAttr('class').addClass('log');
         $('body').addClass('login-active');
     });
 
     $('#close').click(function(){
-        $('#loginForm').addClass('out');
-        $('#loginForm').removeClass('log');
+        $('#form').addClass('out');
+        $('#form').removeClass('log');
         $('body').removeClass('login-active');
     });
 });
