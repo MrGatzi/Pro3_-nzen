@@ -3,78 +3,89 @@
 </head>
 
 <body>
-<main class="offset-1 col-10 offset-1">
+<main>
     <div class="container">
         <div class="row">
             <div class="space col-12"></div>
         </div>
     </div>
 
-    <header>
+    <header class="offset-lg-4 col-lg-4 offset-lg-4 offset-sm-2 col-sm-8 offset-sm-2">
         <nav class="container">
-            <ul class="navbar row">
-                <li class="col-4"><a href="about.php">ABOUT</a></li>
-                <li class="logo col-4">µ</li>
-                <li class="col-4" id="login">
-                    <a id="login-trigger" href="#">SIGN IN</a>
-                    <div id="login-content">
-                        <form method="post" action="../login/checklogin.php">
-                            <fieldset id="input">
-                                <input id="email" type="email" name="email" placeholder="EMAIL ADDRESS"
-                                       required>
-                                <input id="password" type="password" name="password" placeholder="PASSWORD"
-                                       required>
-                            </fieldset>
-                            <fieldset id="action">
-                                <input id="submit" type="submit" value="SIGN IN">
-                                <label><input type="checkbox" checked="checked">Keep me signed in</label>
-                            </fieldset>
-                        </form>
-                        <div id="register"><a href="register.php">Create a portfolio</a></div>
-                    </div>
-                </li>
-            </ul>
+            <div class="navbar row">
+                <button class="nav"><a href="templates/about.html">ABOUT</a></button>
+                <button id="logo" class="nav">µ</button>
+                <button id="login" class="nav">SIGN IN</button>
+            </div>
+            <hr>
         </nav>
     </header>
 
-    <hr class="line">
+    <h1 class="offset-lg-3 col-lg-6 offset-lg-3 offset-sm-2 col-sm-8 offset-sm-2">Cryptocurrency calculator</h1>
+    <p id="explanation" class="offset-lg-2 col-lg-8 offset-lg-2 offset-sm-1 col-sm-10 offset-sm-1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Mattis molestie a iaculis at erat. Purus semper
+        eget duis at tellus at. Dolor magna eget est lorem ipsum
+        dolor. Massa enim nec dui nunc.
+    </p>
 
 
-    <form action="../login/register.php" method="post">
+    <form id="calculator" action="../login/register.php" method="post">
+
         <fieldset>
             <div id="portfolio" class="container">
-                <div class="row newCurrency">
-                    {% include 'currency.twig' %}
-                </div>
-                <div class="row newCurrency">
-                    {% include 'currency.twig' %}
+                <div class="newCurrency row">
+                    <select name="currency">
+                    </select>
+                    <input class="amount" type="number" name="amount" value="0">
+                    <button class="button remove" type="button" name="remove">x</button>
                 </div>
             </div>
         </fieldset>
 
-        <fieldset id="add">
-            <button class="up add" type="button" name="add">ADD</button>
+        <fieldset>
+            <button id="add" class="button" type="button" name="add">ADD CRYPTOCURRENCY</button>
         </fieldset>
 
-        <hr class="line">
-
-        <fieldset id="totalSum">
-            <div class="container">
-                <div class="row">
+        <fieldset>
+            <div id="totalSum" class="container">
+                <div class="sum row">
                     <select name="money">
                         <option value="USD" selected>USD</option>
-                        <!-- TODO: Optionen -> Währungen einfügen -->
                     </select>
-                    <div class="col 4"><p>{{ TotalSum }}</p></div>
+                    <div class="output">{{ TotalSum }}</div>
                 </div>
             </div>
         </fieldset>
 
         <fieldset id="save">
-            <button class="up" type="submit" name="save">SAVE</button>
+            <button class="up submit" type="submit" name="save">SAVE</button>
         </fieldset>
     </form>
 
+    <div id="loginForm">
+        <div class="loginBox">
+            <div class="login-content">
+                <button class="offset-9" id="close">CLOSE</button>
+                <form method="post" action="../login/checklogin.php">
+                    <fieldset id="input">
+                        <input id="email" type="text" name="email" required>
+                        <label>EMAIL ADDRESS</label>
+                        <input id="password" type="password" name="password" required>
+                        <label>PASSWORD</label>
+                    </fieldset>
+                    <fieldset id="action">
+                        <input type="checkbox" checked="checked">
+                        <label class="col-12">Keep me signed in</label>
+                        <button class="up" type="submit" value="SIGN IN">SIGN IN</button>
+                    </fieldset>
+                </form>
+                <p>or</p>
+                <div id="register"><a href="/login/register.php">Create a portfolio</a></div>
+            </div>
+        </div>
+    </div>
 
 </main>
 </body>

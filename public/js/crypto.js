@@ -12,6 +12,7 @@ $(document).ready(function(){
             }));
         }
     });
+
     $.get("tests/fiat_api.php", function(data, status){
         data1=JSON.parse(data);
         $.each(data1.rates, function( key, value ) {

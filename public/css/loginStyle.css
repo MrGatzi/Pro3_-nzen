@@ -1,0 +1,86 @@
+form {
+    text-align: center;
+    color: #1c1c1c;
+}
+
+#loginForm a {
+    color: #1c1c1c;
+    text-decoration: none;
+}
+
+#loginForm a:hover {
+    color: #30e2e3;
+    text-decoration: none;
+}
+
+#loginForm fieldset {
+    display: block;
+    justify-content: center;
+    padding-top: 30px;
+    text-align: center;
+}
+#loginForm label {
+    color: #777777;
+    cursor: text;
+    font-size: 20px;
+    -moz-transform: translateY(-50px);
+    -ms-transform: translateY(-50px);
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    transition: all 0.3s;
+}
+#loginForm fieldset input {
+    box-sizing: border-box;
+    justify-content: center;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #1c1c1c;;
+    color: #777777;
+    font-size: 20px;
+    outline: 0;
+    text-align: center;
+    transition: all 0.3s;
+    width: 180px;
+}
+
+#loginForm fieldset input:focus {
+    max-width: 80%;
+    width: 250px;
+}
+
+#loginForm fieldset input:focus + label {
+    color: #1c1c1c;
+    font-size: 18px;
+    -moz-transform: translateY(-74px);
+    -ms-transform: translateY(-74px);
+    -webkit-transform: translateY(-74px);
+    transform: translateY(-74px);
+}
+#loginForm fieldset input:valid + label {
+    font-size: 18px;
+    -moz-transform: translateY(-74px);
+    -ms-transform: translateY(-74px);
+    -webkit-transform: translateY(-74px);
+    transform: translateY(-74px);
+}
+
+#loginForm .up {
+    color: #1c1c1c;
+    margin-bottom: 10px;
+}
+
+#close {
+    background: none;
+    border: none;
+    padding-right: 25px;
+    padding-left: 25px;
+    color: #1c1c1c;
+    opacity: 0.6;
+}
+
+#close:hover,
+#close:focus {
+    border: none;
+    opacity: 1;
+    color: #30e2e3;
+}
