@@ -5,13 +5,13 @@
 <body>
     <main>
 
-        <h1 class="offset-lg-3 col-lg-6 offset-lg-3 offset-sm-2 col-sm-8 offset-sm-2">Hello <button class="none">{{ FirstName }}John</button>!</h1>
+        <h1 class="offset-lg-3 col-lg-6 offset-lg-3 offset-sm-2 col-sm-8 offset-sm-2">Hello <button class="none">{{ username }}</button>!</h1>
         <p id="explanation" class="offset-lg-2 col-lg-8 offset-lg-2 offset-sm-1 col-sm-10 offset-sm-1">
-            Welcome back. You won/losed 300 USD these are 3 %.
+            Welcome back.
             <br>Look at the <a class="info" href="#statistic">statistics</a>.
         </p>
 
-        <p>Your portfolio is worth 2048.98 USD.</p>
+        <p>Your portfolio is worth {{ value }}.</p>
 
         <section>
             <h3>PORTFOLIO</h3>
