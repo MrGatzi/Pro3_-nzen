@@ -18,25 +18,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="38" column="44" lean-forward="true" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-              <folding>
-                <marker date="1510852749529" expanded="true" signature="1662:1779" ph="..." />
-                <marker date="1510852749529" expanded="true" signature="1799:2148" ph="..." />
-                <marker date="1510852749529" expanded="true" signature="1849:2128" ph="..." />
-                <marker date="1510852749529" expanded="true" signature="1887:2109" ph="..." />
-                <marker date="1510852749529" expanded="true" signature="1929:2025" ph="..." />
-                <marker date="1510852749529" expanded="true" signature="2178:2276" ph="..." />
-                <marker date="1510852749529" expanded="true" signature="2314:3215" ph="..." />
-                <marker date="1510852749529" expanded="true" signature="2345:3204" ph="..." />
-                <marker date="1510852749529" expanded="true" signature="2385:3189" ph="..." />
-                <marker date="1510852749529" expanded="true" signature="2522:3050" ph="..." />
-                <marker date="1510852749529" expanded="true" signature="2564:2861" ph="..." />
-                <marker date="1510852749529" expanded="true" signature="2904:3026" ph="..." />
-              </folding>
+            <state relative-caret-position="340">
+              <caret line="46" column="18" lean-forward="true" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buttons.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="buttons.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/buttons.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -110,9 +97,9 @@
         <option value="$PROJECT_DIR$/templates/head.twig" />
         <option value="$PROJECT_DIR$/login/includes/safeCoins.php" />
         <option value="$PROJECT_DIR$/login/includes/getCoins.php" />
-        <option value="$PROJECT_DIR$/templates/index.twig" />
         <option value="$PROJECT_DIR$/public/js/buttons.js" />
         <option value="$PROJECT_DIR$/login/getCoins.php" />
+        <option value="$PROJECT_DIR$/templates/index.twig" />
       </list>
     </option>
   </component>
@@ -327,12 +314,12 @@
       <option name="presentableId" value="Default" />
       <updated>1510674398265</updated>
       <workItem from="1510674405709" duration="4636000" />
-      <workItem from="1510760398392" duration="11048000" />
+      <workItem from="1510760398392" duration="11121000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15684000" />
+    <option name="totallyTimeSpent" value="15757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1932" height="1047" extended-state="0" />
@@ -729,27 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="38" column="44" lean-forward="true" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-          <folding>
-            <marker date="1510852749529" expanded="true" signature="1662:1779" ph="..." />
-            <marker date="1510852749529" expanded="true" signature="1799:2148" ph="..." />
-            <marker date="1510852749529" expanded="true" signature="1849:2128" ph="..." />
-            <marker date="1510852749529" expanded="true" signature="1887:2109" ph="..." />
-            <marker date="1510852749529" expanded="true" signature="1929:2025" ph="..." />
-            <marker date="1510852749529" expanded="true" signature="2178:2276" ph="..." />
-            <marker date="1510852749529" expanded="true" signature="2314:3215" ph="..." />
-            <marker date="1510852749529" expanded="true" signature="2345:3204" ph="..." />
-            <marker date="1510852749529" expanded="true" signature="2385:3189" ph="..." />
-            <marker date="1510852749529" expanded="true" signature="2522:3050" ph="..." />
-            <marker date="1510852749529" expanded="true" signature="2564:2861" ph="..." />
-            <marker date="1510852749529" expanded="true" signature="2904:3026" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login/getCoins.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
@@ -768,6 +734,14 @@
           <folding>
             <marker date="1510852696057" expanded="true" signature="41:618" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="46" column="18" lean-forward="true" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
