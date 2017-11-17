@@ -1,6 +1,6 @@
 <?php
 ob_start();
-
+session_start();
 include 'config.php';
 require 'includes/functions.php';
 include 'includes/loginform.php';
@@ -20,9 +20,9 @@ $resp = new RespObj($email, $loginCtl->checkLogin($email, $password));
 $jsonResp = json_encode($resp);
 echo $jsonResp;
 
-echo $resp;
 if($resp = 'true'){
-    echo 'true';
+    $_SESSION['loggedin'] = true;
+    $_SESSION['user'] = $email;
     unset($resp, $jsonResp);
     ob_end_flush();
     header('Location:../index.php');

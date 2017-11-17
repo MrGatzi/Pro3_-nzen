@@ -68,22 +68,23 @@
         <div class="loginBox">
             <div class="login-content">
                 <button class="offset-9" id="close">CLOSE</button>
-                <form method="post" action="../login/checklogin.php">
+                <form method="post" action="login/checklogin.php">
                     <fieldset id="input">
-                        <input id="email" type="text" name="email" required>
+                        <input id="myemail" type="text" name="myemail" required>
                         <label>EMAIL ADDRESS</label>
-                        <input id="password" type="password" name="password" required>
+                        <input id="mypassword" type="password" name="mypassword" required>
                         <label>PASSWORD</label>
                     </fieldset>
                     <fieldset id="action">
-                        <button class="up" type="submit" value="SIGN IN">SIGN IN</button>
+                        <button class="up" type="submit" name="submit" value="SIGN IN">SIGN IN</button>
                     </fieldset>
                 </form>
                 <p>or</p>
-                <div id="register"><a href="../login/register.php">Create a portfolio</a></div>
+                <div id="register"><a href="login/register.php">Create a portfolio</a></div>
             </div>
         </div>
     </div>
 
 </main>
+<script src="../js/login.js"></script>
 </body>

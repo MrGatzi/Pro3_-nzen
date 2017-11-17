@@ -7,11 +7,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     $twig = new Twig_Environment($loader);
 
     echo $twig->render('portfolio.twig');
-}else {
-
-    $loader = new Twig_Loader_Filesystem('templates');
-    $twig = new Twig_Environment($loader);
-
-    echo $twig->render('index.twig');
 }
+
+$loader = new Twig_Loader_Filesystem('templates');
+$twig = new Twig_Environment($loader);
+
+echo $twig->render('index.twig');
+
 
