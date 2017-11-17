@@ -1,34 +1,48 @@
-var data1;
+var storedValues;
+var stordUSDValues;
 $(document).ready(function () {
-    var code = $('#portfolio').html();
-
+    getcrypto();
+    getUSD();
+    var code = '\n <div class="newCurrency row">\n <select class="coin" name="currency">\n </select>\n <input class="amount" type="text" name="amount" value="0">\n <button class="button remove" type="button" name="remove">x</button>\n </div>\n';
     $.get("login/getCoins.php", function(data, status){
         var port=JSON.parse(data);
-        for (index = 0; index < port.length; ++index) {
+        for (var index = 0; index < port.length; ++index) {
             var parent = $( "#portfolio" )
             var html = $.parseHTML(code);
             $(html[1]).find('.crypto_coin').val(port[index].currency);
             $(html[1]).find('.amount').val(port[index].amount);
-
-            console.log(html[1]);
+            $(html[1]).find('.amount').val(port[index].amount);
+            for (var index2 = 0; index2 < storedValues.length; ++index2) {
+                $(html[1]).find('.coin').append($("<option></option>")
+                    .attr("value",storedValues[index2].price_usd)
+                    .text(storedValues[index2].symbol)
+                    .prop('selected', function(){
+                        if(storedValues[index2].symbol==port[index].currency){
+                            return true;
+                        }else{
+                            return false;
+                        }
+                    })
+                );
+            };
             parent.append(html);
-            // console.log(html[1]);
-            crypto();
+
             remove();
         }
     });
-
-
-
     $('#add').click(function () {
         var parent = $( "#portfolio" ),
             html = $.parseHTML(code);
-
+        for (var index2 = 0; index2 < storedValues.length; ++index2) {
+            $(html[1]).find('.coin').append($("<option></option>")
+                .attr("value",storedValues[index2].price_usd)
+                .text(storedValues[index2].symbol)
+            );
+        };
         parent.append(html);
-        crypto();
+
         remove();
     });
-
     remove();
     $('#calculator').on("change", '.amount', function(){
         calcUSD();
@@ -38,20 +52,22 @@ $(document).ready(function () {
     });
 });
 
-
-function crypto() {
-
-
-    $.get("tests/api_que.php", function(data, status){
-        data1=JSON.parse(data);
-       // console.log(data1);
-        for (index = 0; index < data1.length; ++index) {
-            $('[name="currency"]').append($('<option>', {
-                value: data1[index].price_usd,
-                text: data1[index].symbol
-            }));
+function getcrypto() {
+    $.ajax({
+        async: false,
+        type: 'GET',
+        url: 'tests/api_que.php',
+        success: function(data) {
+            storedValues=JSON.parse(data);
+        },
+        fail: function(data) {
+            return false;
         }
     });
+    /*$.get("tests/api_que.php", function(data, status){
+     storedValues=JSON.parse(data);
+     });*/
+    return true;
 }
 
 function remove() {
@@ -67,7 +83,20 @@ function remove() {
 function calcUSD() {
     var all=0;
     $('[name="currency"]').each(function( index ) {
-     all = all +($( this ).val()*$( this ).next().val());
+         all = all +($( this ).val()*$( this ).next().val());
     });
     $('.output').text(all);
+}
+function getUSD(){
+    //eventuell Ajax anfrage wie bei get Crypto machen ?
+    $.get("tests/fiat_api.php", function(data, status){
+        stordUSDValues=JSON.parse(data);
+        $.each(stordUSDValues.rates, function( key, value ) {
+
+            $('[name="money"]').append($('<option>', {
+                value: value,
+                text: key
+            }));
+        });
+    });
 }

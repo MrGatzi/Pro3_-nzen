@@ -11,7 +11,7 @@ $(document).ready(function(){
 			symbolsArr[index]=data1[index].symbol;
 		   
 		   
-			//console.log(data1[index]);
+			//console.log(storedValues[index]);
 			var div = document.createElement("div");
 			div.style.width = "250px";
 			div.style.height = "30px";
