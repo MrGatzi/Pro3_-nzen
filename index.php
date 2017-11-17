@@ -1,16 +1,16 @@
 <?php
 
 require 'vendor/autoload.php';
+require 'lib/dataBaseCon.php';
+require 'lib/apiCon.php';
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     $loader = new Twig_Loader_Filesystem('templates');
     $twig = new Twig_Environment($loader);
-    //get UserDaten !
-    //get CryptoDaten !
-    //get UsdDaten !
 
-    //testdaten
-    $tUserDaten = [
+    //get UserDaten !
+    $tUserDaten = json_decode(getUserCoins(),true);
+    /* $tUserDaten = [
         0 => array(
             "symbol" => 'BTC',
             "value" => 0.1
@@ -23,21 +23,25 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             "symbol" => 'DOGE',
             "value" => 4
         ),
-    ];
-    $tCryptoDaten = [
-        "BTC" => array(
+    ];*/
+    //get CryptoDaten !
+    $tCryptoDaten = json_decode(getCrypto(),true);
+    /*$tCryptoDaten = [
+        0 => array(
             "symbol" => 'BTC',
             "value" => 1000
         ),
-        "LTC" => array(
+        1 => array(
             "symbol" => 'LTC',
             "value" => 60
         ),
-        "DOGE" => array(
+        2 => array(
             "symbol" => 'DOGE',
             "value" => 0.01
         ),
-    ];
+    ];*/
+    //get UsdDaten !
+
     $tUsdDaten = [
         "USD" => array(
             "value" => 1

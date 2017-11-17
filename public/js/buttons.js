@@ -76,7 +76,7 @@ function getcrypto() {
     $.ajax({
         async: false,
         type: 'GET',
-        url: 'tests/api_que.php',
+        url: 'lib/crypto_api.php',
         success: function(data) {
             storedValues=JSON.parse(data);
         },
@@ -106,7 +106,8 @@ function calcUSD() {
 }
 function getUSD(){
     //eventuell Ajax anfrage wie bei get Crypto machen ?
-    $.get("tests/fiat_api.php", function(data, status){
+    $.get("lib/fiat_api.php", function(data, status){
+        console.log(data);
         stordUSDValues=JSON.parse(data);
         $.each(stordUSDValues.rates, function( key, value ) {
 
