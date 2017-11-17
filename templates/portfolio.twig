@@ -24,12 +24,21 @@
             <form action="../change.php" method="post">
                 <fieldset>
                     <div id="portfolio" class="container">
+                        {% for x in tUserDaten %}
                         <div class="newCurrency row">
                             <select name="currency">
+                                {% for i in tCryptoDaten %}
+                                {% if i.symbol == x.symbol %}
+                                    <option value="{{ i.value }}" selected="true">{{ i.symbol }}</option>
+                                {% else %}
+                                    <option value="{{ i.value }}">{{ i.symbol }}</option>
+                                {% endif %}
+                                {% endfor %}
                             </select>
-                            <input class="amount" type="number" name="amount" value="0">
+                            <input class="amount" type="number" name="amount" value="{{ x.value }}">
                             <button class="button remove" type="button" name="remove">x</button>
                         </div>
+                        {% endfor %}
                     </div>
                 </fieldset>
 

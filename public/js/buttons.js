@@ -7,7 +7,7 @@ $(document).ready(function () {
     $.ajax({
         async: false,
         type: 'GET',
-        url: 'login/getCoins.php',
+        url: 'login/getCoins1.php',
         success: function(data) {
             var port=JSON.parse(data);
             for (var index = 0; index < port.length; ++index) {
