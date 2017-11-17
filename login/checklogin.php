@@ -15,18 +15,15 @@ $password = stripcslashes($password);
 
 $loginCtl = new LoginForm;
 $conf = new GlobalConf;
+$check = $loginCtl->checkLogin($email, $password);
 
-$resp = new RespObj($email, $loginCtl->checkLogin($email, $password));
-$jsonResp = json_encode($resp);
-echo $jsonResp;
-
-if($resp = 'true'){
+if($check === 'true'){
     $_SESSION['loggedin'] = true;
     $_SESSION['user'] = $email;
-    unset($resp, $jsonResp);
     ob_end_flush();
     header('Location:../index.php');
     exit();
+}else{
+    echo $check;
 }
-
 
