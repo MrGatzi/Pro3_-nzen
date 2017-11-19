@@ -3,7 +3,7 @@ var stordUSDValues;
 $(document).ready(function () {
     getcrypto();
     getUSD();
-    var code = '\n <div class="newCurrency row">\n <select class="coin" name="currency">\n </select>\n <input class="amount" type="text" name="amount" value="0">\n <button class="button remove" type="button" name="remove">x</button>\n </div>\n';
+    var code = '\n <div class="newCurrency row">\n <select class="portfolio_values" name="currency">\n </select>\n <input class="amount" type="text" name="amount" value="0">\n <button class="button remove" type="button" name="remove">x</button>\n </div>\n';
     $.ajax({
         async: false,
         type: 'GET',
@@ -17,7 +17,7 @@ $(document).ready(function () {
                 $(html[1]).find('.amount').val(port[index].amount);
                 $(html[1]).find('.amount').val(port[index].amount);
                 for (var index2 = 0; index2 < storedValues.length; ++index2) {
-                    $(html[1]).find('.coin').append($("<option></option>")
+                    $(html[1]).find('.portfolio_values').append($("<option></option>")
                         .attr("value",storedValues[index2].price_usd)
                         .text(storedValues[index2].symbol)
                         .prop('selected', function(){
@@ -38,7 +38,7 @@ $(document).ready(function () {
             var parent = $( "#portfolio" );
             var html = $.parseHTML(code);
             for (var index2 = 0; index2 < storedValues.length; ++index2) {
-                $(html[1]).find('.coin').append($("<option></option>")
+                $(html[1]).find('.portfolio_values').append($("<option></option>")
                     .attr("value",storedValues[index2].price_usd)
                     .text(storedValues[index2].symbol)
                 );
@@ -51,7 +51,7 @@ $(document).ready(function () {
         var parent = $( "#portfolio" ),
             html = $.parseHTML(code);
         for (var index2 = 0; index2 < storedValues.length; ++index2) {
-            $(html[1]).find('.coin').append($("<option></option>")
+            $(html[1]).find('.portfolio_values').append($("<option></option>")
                 .attr("value",storedValues[index2].price_usd)
                 .text(storedValues[index2].symbol)
             );
@@ -107,7 +107,7 @@ function calcUSD() {
 function getUSD(){
     //eventuell Ajax anfrage wie bei get Crypto machen ?
     $.get("lib/fiat_api.php", function(data, status){
-        console.log(data);
+        console.log();
         stordUSDValues=JSON.parse(data);
         $.each(stordUSDValues.rates, function( key, value ) {
 

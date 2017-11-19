@@ -21,17 +21,16 @@
         <button class="addSection button">ADD CHANGES</button>
 
         <section id="change">
-            <form action="../change.php" method="post">
                 <fieldset>
                     <div id="portfolio" class="container">
                         {% for x in tUserDaten %}
                         <div class="newCurrency row">
-                            <select name="currency">
+                            <select class="portfolio_values" name="currency">
                                 {% for i in tCryptoDaten %}
                                 {% if i.symbol == x.symbol %}
-                                    <option value="{{ i.value }}" selected="true">{{ i.symbol }}</option>
+                                    <option class="portfolio_curr" value="{{ i.value }}" selected="true">{{ i.symbol }}</option>
                                 {% else %}
-                                    <option value="{{ i.value }}">{{ i.symbol }}</option>
+                                    <option class="portfolio_curr" value="{{ i.value }}">{{ i.symbol }}</option>
                                 {% endif %}
                                 {% endfor %}
                             </select>
@@ -47,11 +46,9 @@
                 </fieldset>
 
                 <fieldset id="save">
-                    <button class="up submit" type="submit" name="save">SAVE</button>
+                    <button id='safe_button'class="up submit" type="submit" name="save" value='{{test}}'>SAVE</button>
                 </fieldset>
                 <button class="closeSection button" type="button">CLOSE</button>
-            </form>
-
         </section>
 
 
