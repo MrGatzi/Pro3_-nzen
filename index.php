@@ -19,10 +19,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             "symbol" => 'LTC',
             "value" => 2
         ),
-        2 => array(
-            "symbol" => 'DOGE',
-            "value" => 4
-        ),
     ];*/
     //get CryptoDaten !
     $tCryptoDaten = json_decode(getCrypto(),true);
@@ -35,13 +31,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             "symbol" => 'LTC',
             "value" => 60
         ),
-        2 => array(
-            "symbol" => 'DOGE',
-            "value" => 0.01
-        ),
     ];*/
     //get UsdDaten !
-
+    //$tUsdDaten = json_decode(getUSD(),true);
     $tUsdDaten = [
         "USD" => array(
             "value" => 1

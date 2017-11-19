@@ -39,7 +39,7 @@ $(document).ready(function () {
             var html = $.parseHTML(code);
             for (var index2 = 0; index2 < storedValues.length; ++index2) {
                 $(html[1]).find('.portfolio_values').append($("<option></option>")
-                    .attr("value",storedValues[index2].price_usd)
+                    .attr("value",storedValues[index2].value)
                     .text(storedValues[index2].symbol)
                 );
             };
@@ -52,7 +52,7 @@ $(document).ready(function () {
             html = $.parseHTML(code);
         for (var index2 = 0; index2 < storedValues.length; ++index2) {
             $(html[1]).find('.portfolio_values').append($("<option></option>")
-                .attr("value",storedValues[index2].price_usd)
+                .attr("value",storedValues[index2].value)
                 .text(storedValues[index2].symbol)
             );
         };
@@ -61,10 +61,10 @@ $(document).ready(function () {
         remove();
     });
     remove();
-    $('#calculator').on("change", '.amount', function(){
+    $('#portfolio').on("change", '.amount', function(){
         calcUSD();
     });
-   $('#calculator').on("change", '[name="currency"]', function(){
+   $('#portfolio').on("change", '[name="currency"]', function(){
         calcUSD();
     });
     $('#calculator').on("change", '[name="money"]', function(){
@@ -78,7 +78,9 @@ function getcrypto() {
         type: 'GET',
         url: 'lib/crypto_api.php',
         success: function(data) {
+
             storedValues=JSON.parse(data);
+
         },
         fail: function(data) {
             return false;
@@ -99,10 +101,12 @@ function remove() {
 }
 function calcUSD() {
     var all=0;
-    $('[name="currency"]').each(function( index ) {
+    $('.portfolio_values').each(function( index ) {
+        console.log($( this ).val()+' __  '+$( this ).next().val());
          all = all +($( this ).val()*$( this ).next().val());
     });
     $('.output').text(all);
+    $('#user_worth').text(all)
 }
 function getUSD(){
     //eventuell Ajax anfrage wie bei get Crypto machen ?
@@ -125,5 +129,6 @@ function updateMoney(){
     });
     all=all*$('[name="money"]').val();
     console.log('hey hey '+$('[name="money"]').val());
+    $('#user_worth').text(all);
     $('.output').text(all);
 }
