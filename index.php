@@ -3,7 +3,6 @@
 require 'vendor/autoload.php';
 require 'lib/dataBaseCon.php';
 require 'lib/apiCon.php';
-session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     $loader = new Twig_Loader_Filesystem('templates');
     $twig = new Twig_Environment($loader);

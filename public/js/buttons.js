@@ -102,7 +102,6 @@ function remove() {
 function calcUSD() {
     var all=0;
     $('.portfolio_values').each(function( index ) {
-        console.log($( this ).val()+' __  '+$( this ).next().val());
          all = all +($( this ).val()*$( this ).next().val());
     });
     $('.output').text(all);
@@ -128,7 +127,6 @@ function updateMoney(){
         all = all +($( this ).val()*$( this ).next().val());
     });
     all=all*$('[name="money"]').val();
-    console.log('hey hey '+$('[name="money"]').val());
     $('#user_worth').text(all);
     $('.output').text(all);
 }

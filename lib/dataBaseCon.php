@@ -5,7 +5,16 @@
  * Date: 17.11.2017
  * Time: 22:37
  */
+session_start();
+if($_SERVER['REQUEST_METHOD'] == "POST" ) {
+    header('HTTP/1.1 200 OK');
+    echo safeUserCoins();
+}
 function getUserCoins(){
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+        $iduser=$_SESSION['iduser'];
+
+
     $host = "localhost"; // Host name
     $email = "root"; // Mysql email
     $password = ""; // Mysql password
@@ -23,7 +32,7 @@ function getUserCoins(){
     try {
         $conn = new PDO('mysql:host=' . $host . ';dbname=' . $db_name . ';charset=utf8', $email, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT * FROM " . $tbl_coins . " where user_iduser = 1";
+        $sql = "SELECT * FROM " . $tbl_coins . " where user_iduser = ".$iduser;
         $stat =$conn->query($sql);
 
         foreach ($stat as $row) {
@@ -36,6 +45,8 @@ function getUserCoins(){
     }
     //var_dump($res);
     return json_encode($res);
+
+    }
 }
 function safeUserCoins(){
     /**
@@ -44,32 +55,41 @@ function safeUserCoins(){
      * Date: 16.11.2017
      * Time: 14:56
      */
-    $host = "localhost"; // Host name
-    $email = "root"; // Mysql email
-    $password = ""; // Mysql password
-    $db_name = "munzn"; // Database name
-    $id = 1;
-    $currency = 'DOGE';
-    $amount = 0.1;
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+        $iduser = $_SESSION['iduser'];// get User Id für die abfrage!!
+        $host = "localhost"; // Host name
+        $email = "root"; // Mysql email
+        $password = ""; // Mysql password
+        $db_name = "munzn"; // Database name
+        $currency = 'DOGE';
+        $amount = 0.1;
 
 //DO NOT CHANGE BELOW THIS LINE UNLESS YOU CHANGE THE NAMES OF THE MEMBERS AND LOGINATTEMPTS TABLES
 
-    $tbl_prefix = "";
-    $tbl_user = $tbl_prefix."user";
-    $tbl_coins = $tbl_prefix."coins";
-    try {
-        $conn = new PDO('mysql:host=' . $host . ';dbname=' . $db_name . ';charset=utf8', $email, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// prepare sql and bind parameters
-        $stmt = $conn->prepare("INSERT INTO " . $tbl_coins . " (user_iduser, currency,amount) VALUES (:user_iduser, :currency,:amount)");
-        $stmt->bindParam(':user_iduser', $id);
-        $stmt->bindParam(':currency', $currency);
-        $stmt->bindParam(':amount', $amount);
-        $statement=$stmt->execute();
-        print $statement;
-    } catch (PDOException $e) {
-        print "Error!: " . $e->getMessage() . "<br/>";
-        die();
+        $tbl_prefix = "";
+        $tbl_coins = $tbl_prefix . "coins";
+        try {
+            $conn = new PDO('mysql:host=' . $host . ';dbname=' . $db_name . ';charset=utf8', $email, $password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $stmt = $conn->prepare("DELETE FROM " . $tbl_coins . " WHERE user_iduser=" .$iduser);
+            $statement = $stmt->execute();
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+
+        try {
+            $conn = new PDO('mysql:host=' . $host . ';dbname=' . $db_name . ';charset=utf8', $email, $password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql_stmt="";
+            foreach ($_POST['data'] as &$value) {
+                $sql_stmt.="INSERT INTO " . $tbl_coins . " (user_iduser, currency,amount) VALUES (".$iduser.", \"".$value['symbol']."\",".$value['value'].");";
+            }
+            $stmt = $conn->prepare($sql_stmt);
+            $statement = $stmt->execute();
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
     }
-    echo 'safed';
 }
