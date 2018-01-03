@@ -7,6 +7,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     $twig = new Twig_Environment($loader);
 
     echo $twig->render('portfolio.twig');
+
 }
 
 $loader = new Twig_Loader_Filesystem('templates');

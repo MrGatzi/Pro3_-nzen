@@ -9,6 +9,7 @@ require __DIR__ . '/cache/src/autoload.php';
  */
 function getCrypto()
 {
+
     $InstanceCache = CacheManager::getInstance('files');
     $key = "crypto";
     //$InstanceCache->clear(); clears cache

@@ -70,9 +70,21 @@
                         <input id="mypassword" type="password" name="mypassword" required>
                         <label>PASSWORD</label>
                     </fieldset>
+
+                    <!--Displaying error message -- formatting needs to be done -->
+                    {% if error == true %}
+                    <fieldset id="error">
+                        <h3>Wrong Email or Password</h3>
+                    </fieldset>
+                    {% endif %}
+
                     <fieldset id="action">
                         <button class="up" type="submit" name="submit" value="SIGN IN">SIGN IN</button>
                     </fieldset>
+
+
+
+
                 </form>
                 <p>or</p>
                 <div id="register"><a href="login/register.php">Create a portfolio</a></div>
@@ -81,5 +93,8 @@
     </div>
 
 </main>
-<script src="../js/login.js"></script>
+<script src="\Pro3_-nzen\js\jquery-2.2.4.min.js"></script>
+<script src="/Pro3_-nzen/js/login.js"></script>
+<script src="/Pro3_-nzen/js/js.cookie.js"></script>
+<script src="/Pro3_-nzen/js/form.js"></script>
 </body>

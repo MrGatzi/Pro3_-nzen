@@ -19,11 +19,16 @@ $check = $loginCtl->checkLogin($email, $password);
 
 if($check === 'true'){
     $_SESSION['loggedin'] = true;
+    $_SESSION['error'] = false;
     $_SESSION['user'] = $email;
     ob_end_flush();
     header('Location:../index.php');
     exit();
 }else{
-    echo $check;
+    $_SESSION['loggedin'] = false;
+    $_SESSION['error'] = true;
+    ob_end_flush();
+    header('Location:../index.php');
+    exit();
 }
 
