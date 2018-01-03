@@ -3,9 +3,13 @@
 require 'vendor/autoload.php';
 require 'lib/dataBaseCon.php';
 require 'lib/apiCon.php';
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    $loader = new Twig_Loader_Filesystem('templates');
-    $twig = new Twig_Environment($loader);
+
+//twig init
+$loader = new Twig_Loader_Filesystem('templates');
+$twig = new Twig_Environment($loader);
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { //if the user is already logged in
+
 
     //get UserDaten !
     $tUserDaten = json_decode(getUserCoins(),true);
@@ -45,10 +49,22 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo $twig->render('portfolio.twig', array('username' => $_SESSION['user'],'tUserDaten' => $tUserDaten,'tCryptoDaten'=>$tCryptoDaten,'tUsdDaten'=>$tUsdDaten));
 }else {
 
-    $loader = new Twig_Loader_Filesystem('templates');
-    $twig = new Twig_Environment($loader);
+    if (isset($_SESSION['error']) && $_SESSION['error'] === true){
 
+        echo $twig->render('index.twig', array('error' => true));
 
-    echo $twig->render('index.twig');
+        // reopens the login dialogue after the failed login attempt
+        echo '<script>
+              $(document).ready(function(){ 
+                $(\'#loginForm\').removeAttr(\'class\').addClass(\'log\');
+                $(\'body\').addClass(\'login-active\');
+              });
+               </script>';
+        $_SESSION['error'] = false;
+
+    }else {
+        echo $twig->render('index.twig', array('error' => false));
+    }
+
 }
 
