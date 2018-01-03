@@ -1,19 +1,36 @@
+var storedValues;
 
 $(function() {
     setTimeout(function() {
         if (cookieData != null) {
 
-            // split data into string array
+            //splits data into string array
             cookieArray = cookieData.split('&');
 
+            //counts the amount of rows
+            var count = (cookieData.match(/amount/g) || []).length;
+
+            //adds the rows needed
+            for (var i = 0; i < count -1; i++) {
+                $("#add").click();
+            }
+
+            var index = 0;
             //split each set of data
             $.each(cookieArray, function (k, v) {
                 field = v.split('=');
 
                 // insert data into fields
 
-                console.log( field[0] + " " + field[1]);
-                $('#calculator [name="'+field[0]+'"]').val(field[1]);
+                console.log( index + " " + field[0] + " " + field[1]);
+                if(field[0] != "money"){
+                    $('#calculator [name="'+field[0]+'"]:eq('+index+')').val(field[1]);
+                }else{
+                    $('#calculator [name="'+field[0]+'"]').val(field[1]);
+                }
+                if (field[0] == "amount"){
+                    index++;
+                }
 
             });
         }
@@ -32,24 +49,13 @@ $(function() {
 });
 
 
-function addRow(){
-    var parent = $( "#portfolio" ),
-        html = $.parseHTML(code);
-    for (var index2 = 0; index2 < storedValues.length; ++index2) {
-        $(html[1]).find('.portfolio_values').append($("<option></option>")
-            .attr("value",storedValues[index2].value)
-            .text(storedValues[index2].symbol)
-        );
-    };
-    parent.append(html);
-
-}
 
 $('#calculator').on('input', function() {
 
     // save input into String
     dataString = $(this).serialize();
 
+    console.log(dataString);
     // new Cookie
     Cookies.set('formCookie', dataString);
     return false;
