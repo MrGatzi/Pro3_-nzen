@@ -2,11 +2,16 @@ html.login-active, body.login-active {
     overflow: hidden;
 }
 
-#loginForm {
-    color: #3d3d3d;
+main.login-active {
+    filter: blur(20px);
 }
 
 #loginForm {
+    color: #ffffff;
+}
+
+#loginForm {
+    color: #2a2a2a;
     position: fixed;
     display: table;
     height: 100%;
@@ -22,7 +27,7 @@ html.login-active, body.login-active {
     transform: scale(1);
 }
 #loginForm.log .loginBox {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.0);
 }
 #loginForm.log .loginBox .login-content {
     animation: moveUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
@@ -44,11 +49,14 @@ html.login-active, body.login-active {
     vertical-align: middle;
 }
 #loginForm .loginBox .login-content {
-    background: rgba(255, 255, 255, 1);
+    width: 300px;
+    background-color: #ffffff;
+    opacity: 0.8;
+    box-shadow: black;
     padding: 40px;
     display: inline-block;
-    border-radius: 3px;
-    font-weight: 300;
+    border-radius: 0px;
+    font-weight: 200;
     position: relative;
 }
 

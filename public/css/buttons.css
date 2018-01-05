@@ -4,6 +4,7 @@
     font: inherit;
     line-height: 1;
     margin: 0.5em;
+    margin-bottom: 30px;
     padding: 1em 2em;
     transition: 0.25s;
     border-color: #30e2e3;
@@ -79,4 +80,15 @@
 
 .hidden {
     display: none;
+}
+
+.change:hover,
+.change:focus {
+    color: #ffffff;
+    opacity: 0.2;
+}
+
+.remove {
+    margin-left: 2px;
+    margin-right: 30px;
 }

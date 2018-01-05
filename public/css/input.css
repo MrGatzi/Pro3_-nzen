@@ -1,61 +1,97 @@
-/*
-form {
+/*form {
     text-align: center;
 }
 
+fieldset {
+    position:relative;
+    margin-bottom:45px;
+}
 label {
-    display: block;
-    letter-spacing: 4px;
-    padding-top: 30px;
-    text-align: center;
-}
-
-label .label-text {
-    color: #9B9B9B;
-    cursor: text;
-    font-size: 20px;
-    line-height: 20px;
-    text-transform: uppercase;
-    -moz-transform: translateY(-34px);
-    -ms-transform: translateY(-34px);
-    -webkit-transform: translateY(-34px);
-    transform: translateY(-34px);
-    transition: all 0.3s;
+    color:rgba(255,255,255, 0.5);
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:5px;
+    -o-transition:0.2s ease all;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
 }
 
 label input {
-    background-color: transparent;
-    border: 0;
-    border-bottom: 2px solid #4A4A4A;
-    color: white;
-    font-size: 36px;
-    letter-spacing: -1px;
-    outline: 0;
-    padding: 5px 20px;
-    text-align: center;
-    transition: all 0.3s;
-    width: 200px;
+    font-size:18px;
+    padding:10px 10px 10px 10px;
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid rgba(255,255,255, 0.3);
+    background:none;
+    color:#eee;
 }
 
 label input:focus {
-    max-width: 100%;
-    width: 400px;
+    outline:none;
 }
 
-label input:focus + .label-text {
-    color: #F0F0F0;
-    font-size: 13px;
-    -moz-transform: translateY(-74px);
-    -ms-transform: translateY(-74px);
-    -webkit-transform: translateY(-74px);
-    transform: translateY(-74px);
-}
-label input:valid + .label-text {
-    font-size: 13px;
-    -moz-transform: translateY(-74px);
-    -ms-transform: translateY(-74px);
-    -webkit-transform: translateY(-74px);
-    transform: translateY(-74px);
+input:focus ~ label, input:valid ~ label {
+    top:-20px;
+    font-size:14px;
+    color:rgba(255,255,255, 0.7);
 }
 
+.bar 	{
+    position:relative;
+    display:block; width:100%;
+}
+
+.bar:before, .bar:after 	{
+    content:'';
+    height:2px;
+    width:0;
+    bottom:1px;
+    position:absolute;
+    background:rgba(255,255,255, 0.7);
+    -o-transition:0.2s ease all;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+
+.bar:before {
+    left:50%;
+}
+
+.bar:after {
+    right:50%;
+}
+
+input:focus ~ .bar:before, .group input:focus ~ .bar:after {
+    width:50%;
+}
+
+.highlight {
+    position:absolute;
+    height:0%;
+    width:100px;
+    top:25%;
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+}
+
+input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+    from { background:rgba(255,255,255, 0.7); }
+    to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+    from { background:rgba(255,255,255, 0.7); }
+    to 	{ width:0; background:transparent; }
+}
 */

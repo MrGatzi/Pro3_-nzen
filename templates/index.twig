@@ -1,4 +1,8 @@
 {% include 'head.twig' %}
+<script src="../js/login.js"></script>
+<script src="../js/js.cookie.js"></script>
+<script src="../js/form.js"></script>
+
 <title>µnzen</title>
 </head>
 
@@ -10,32 +14,37 @@
         </div>
     </div>
 
-    <header class="offset-lg-4 col-lg-4 offset-lg-4 offset-sm-2 col-sm-8 offset-sm-2">
+    <header class="offset-lg-3 col-lg-6 offset-lg-3 offset-md-2 col-md-8 offset-md-2">
         <nav class="container">
             <div class="navbar row">
-                <button class="nav"><a href="about.html">ABOUT</a></button>
-                <button id="logo" class="nav">µ</button>
-                <button id="login" class="nav">SIGN IN</button>
+                <button class="nav"><a href="templates/about.html">ABOUT</a></button>
+                <img id="logo" src="images/logo_w.png" height="130" width="163">
+                <button class="login nav">SIGN IN</button>
             </div>
-            <hr>
         </nav>
     </header>
 
     <h1 class="offset-lg-3 col-lg-6 offset-lg-3 offset-sm-2 col-sm-8 offset-sm-2">Cryptocurrency calculator</h1>
     <p id="explanation" class="offset-lg-2 col-lg-8 offset-lg-2 offset-sm-1 col-sm-10 offset-sm-1">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Mattis molestie a iaculis at erat. Purus semper
-        eget duis at tellus at. Dolor magna eget est lorem ipsum
-        dolor. Massa enim nec dui nunc.
+        µnzen is a cryptocurrency exchange rate calculator and conversion tool,
+        which allows to instantly convert almost every cryptocurrency into fiat money.
+        Join us and easily manage different cryptocurrencies in your personal account.
     </p>
 
 
-    <form id="calculator" action="../login/register.php" method="post">
+    <form id="calculator" method="post">
 
         <fieldset>
             <div id="portfolio" class="container">
-
+<!--             <div class="newCurrency row">
+                    <div class="newCurrency row">
+                        <input class="amount" type="text" name="amount" value="0">
+                        <select class="portfolio_values" name="currency"><option>BTC</option></select>
+                        <p class="change button">3203.92</p>
+                        <button class="button remove" type="button" name="remove">x</button>
+                    </div>
+                </div>
+-->
             </div>
         </fieldset>
 
@@ -54,47 +63,38 @@
             </div>
         </fieldset>
 
-        <fieldset id="save">
-            <button class="up submit" type="submit" name="save">SAVE</button>
+        <fieldset>
+            <button class="up login" type="button" name="save">SAVE</button>
         </fieldset>
     </form>
 
-    <div id="loginForm">
-        <div class="loginBox">
-            <div class="login-content">
-                <button class="offset-9" id="close">CLOSE</button>
-                <form method="post" action="login/checklogin.php">
-                    <fieldset id="input">
-                        <input id="myemail" type="text" name="myemail" required>
-                        <label>EMAIL ADDRESS</label>
-                        <input id="mypassword" type="password" name="mypassword" required>
-                        <label>PASSWORD</label>
-                    </fieldset>
+</main>
 
-                    <!--Displaying error message -- formatting needs to be done -->
-                    {% if error == true %}
-                    <fieldset id="error">
-                        <h3>Wrong Email or Password</h3>
-                    </fieldset>
-                    {% endif %}
-
-                    <fieldset id="action">
-                        <button class="up" type="submit" name="submit" value="SIGN IN">SIGN IN</button>
-                    </fieldset>
-
-
-
-
-                </form>
-                <p>or</p>
-                <div id="register"><a href="login/register.php">Create a portfolio</a></div>
-            </div>
+<div id="loginForm">
+    <div class="loginBox">
+        <div class="login-content">
+            <button class="offset-8" id="close">CLOSE</button>
+            <h2>WELCOME BACK</h2>
+            <p>LOGIN TO YOUR ACCOUNT</p>
+            <!-- Displaying error message -->
+            {% if error == true %}
+                <fieldset>
+                    <p class="error">Sorry, something went wrong.<br>Please try again:</p>
+                </fieldset>
+            {% endif %}
+            <form method="post" action="login/checklogin.php">
+                <fieldset id="input">
+                    <input id="myemail" type="text" name="myemail" placeholder="EMAIL ADDRESS" required>
+                    <input id="mypassword" type="password" name="mypassword" placeholder="PASSWORD" required>
+                </fieldset>
+                <fieldset id="action">
+                    <button class="up" type="submit" name="submit" value="SIGN IN">SIGN IN</button>
+                </fieldset>
+            </form>
+            <p>or</p>
+            <div id="register"><a href="register.php">Create a portfolio</a></div>
         </div>
     </div>
+</div>
 
-</main>
-<script src="\Pro3_-nzen\js\jquery-2.2.4.min.js"></script>
-<script src="/Pro3_-nzen/js/login.js"></script>
-<script src="/Pro3_-nzen/js/js.cookie.js"></script>
-<script src="/Pro3_-nzen/js/form.js"></script>
 </body>

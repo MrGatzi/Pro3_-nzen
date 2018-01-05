@@ -3,7 +3,8 @@ var stordUSDValues;
 $(document).ready(function () {
     getcrypto();
     getUSD();
-    var code = '\n <div class="newCurrency row">\n <select class="portfolio_values" name="currency">\n </select>\n <input class="amount" type="text" name="amount" value="0">\n <button class="button remove" type="button" name="remove">x</button>\n </div>\n';
+    var code = '\n <div class="newCurrency row">\n<input class="amount" type="text" name="amount" value="0">\n <select class="portfolio_values" name="currency"></select>\n <p class="change button">{{ Change }}</p>\n <button class="button remove" type="button" name="remove">x</button>\n </div>';
+  //  var code = '\n <div class="newCurrency row">\n <select class="portfolio_values" name="currency">\n </select>\n <input class="amount" type="text" name="amount" value="0">\n <button class="button remove" type="button" name="remove">x</button>\n </div>\n';
     $.ajax({
         async: false,
         type: 'GET',
