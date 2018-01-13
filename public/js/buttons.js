@@ -3,7 +3,8 @@ var stordUSDValues;
 $(document).ready(function () {
     getcrypto();
     getUSD();
-    var code = '\n <div class="newCurrency row">\n<input class="amount" type="text" name="amount" value="0">\n <select class="portfolio_values" name="currency"></select>\n <p class="change button">{{ Change }}</p>\n <button class="button remove" type="button" name="remove">x</button>\n </div>';
+    updateSingleMoney();
+    var code = '\n <div class="newCurrency row">\n<input class="amount" type="text" name="amount" value="0">\n <select class="portfolio_values" name="currency"></select>\n <p name="CurrencyRowValue" class="change button">0</p>\n <button class="button remove" type="button" name="remove">x</button>\n </div>';
   //  var code = '\n <div class="newCurrency row">\n <select class="portfolio_values" name="currency">\n </select>\n <input class="amount" type="text" name="amount" value="0">\n <button class="button remove" type="button" name="remove">x</button>\n </div>\n';
    /* $.ajax({
         async: false,
@@ -64,12 +65,15 @@ $(document).ready(function () {
     remove();
     $('#portfolio').on("change", '.amount', function(){
         calcUSD();
+        updateSingleMoney();
     });
    $('#portfolio').on("change", '[name="currency"]', function(){
         calcUSD();
+       updateSingleMoney();
     });
     $('#calculator').on("change", '[name="money"]', function(){
         updateMoney();
+        updateSingleMoney();
     });
 });
 
@@ -105,6 +109,7 @@ function calcUSD() {
     $('.portfolio_values').each(function( index ) {
          all = all +($( this ).val()*$( this ).prev().val());
     });
+    all=Math.round(all*100)/100;
     $('.output').text(all);
     $('#user_worth').text(all)
 }
@@ -124,9 +129,15 @@ function getUSD(){
 function updateMoney(){
     var all=0;
     $('[name="currency"]').each(function( index ) {
-        all = all +($( this ).val()*$( this ).next().val());
+        all = all +($( this ).val()*$( this ).prev().val());
     });
     all=all*$('[name="money"]').val();
+    all=Math.round(all*100)/100;
     $('#user_worth').text(all);
     $('.output').text(all);
+}
+function updateSingleMoney(){
+    $('[name="CurrencyRowValue"]').each(function( index ) {
+        $( this ).text(Math.round($( this ).prev().val()*$( this ).prev().prev().val()*100)/100);
+    });
 }

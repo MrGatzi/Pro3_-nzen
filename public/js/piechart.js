@@ -33,7 +33,7 @@ $(document).ready(function () {
             if(user[index][2]==coins[index2].symbol){
                 values++;
                 vlabels.push(user[index][2]);
-                vvalues.push(coins[index2].value*user[index][3]);
+                vvalues.push(Math.round(coins[index2].value*user[index][3]*100)/100);
             }
         }
     }
