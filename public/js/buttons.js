@@ -5,7 +5,7 @@ $(document).ready(function () {
     getUSD();
     var code = '\n <div class="newCurrency row">\n<input class="amount" type="text" name="amount" value="0">\n <select class="portfolio_values" name="currency"></select>\n <p class="change button">{{ Change }}</p>\n <button class="button remove" type="button" name="remove">x</button>\n </div>';
   //  var code = '\n <div class="newCurrency row">\n <select class="portfolio_values" name="currency">\n </select>\n <input class="amount" type="text" name="amount" value="0">\n <button class="button remove" type="button" name="remove">x</button>\n </div>\n';
-    $.ajax({
+   /* $.ajax({
         async: false,
         type: 'GET',
         url: 'login/getCoins1.php',
@@ -46,7 +46,7 @@ $(document).ready(function () {
             };
             parent.append(html);
         }
-    });
+    });*/
     $('#add').click(function () {
         getcrypto();
         var parent = $( "#portfolio" ),
@@ -103,7 +103,7 @@ function remove() {
 function calcUSD() {
     var all=0;
     $('.portfolio_values').each(function( index ) {
-         all = all +($( this ).val()*$( this ).next().val());
+         all = all +($( this ).val()*$( this ).prev().val());
     });
     $('.output').text(all);
     $('#user_worth').text(all)
@@ -111,7 +111,6 @@ function calcUSD() {
 function getUSD(){
     //eventuell Ajax anfrage wie bei get Crypto machen ?
     $.get("lib/fiat_api.php", function(data, status){
-        console.log();
         stordUSDValues=JSON.parse(data);
         $.each(stordUSDValues.rates, function( key, value ) {
 
