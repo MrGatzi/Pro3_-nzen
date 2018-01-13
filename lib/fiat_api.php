@@ -10,6 +10,7 @@ require __DIR__ . '/cache/src/autoload.php';
 $InstanceCache = CacheManager::getInstance('files');
 
 $key = "fiat";
+//$InstanceCache->clear(); //clears cache
 $CachedString = $InstanceCache->getItem($key);
 if (is_null($CachedString->get())) {
     $url = "https://api.fixer.io/latest?base=USD";

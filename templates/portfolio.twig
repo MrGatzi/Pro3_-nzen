@@ -25,16 +25,17 @@
                     <div id="portfolio" class="container">
                         {% for x in tUserDaten %}
                         <div class="newCurrency row">
+                            <input class="amount" type="number" name="amount" value="{{ x.value }}">
                             <select class="portfolio_values" name="currency">
                                 {% for i in tCryptoDaten %}
-                                {% if i.symbol == x.symbol %}
-                                    <option class="portfolio_curr" value="{{ i.value }}" selected="true">{{ i.symbol }}</option>
-                                {% else %}
-                                    <option class="portfolio_curr" value="{{ i.value }}">{{ i.symbol }}</option>
-                                {% endif %}
+                                     {% if i.symbol == x.symbol %}
+                                          <option class="portfolio_curr" value="{{ i.value }}" selected="true">{{ i.symbol }}</option>
+                                     {% else %}
+                                         <option class="portfolio_curr" value="{{ i.value }}">{{ i.symbol }}</option>
+                                     {% endif %}
                                 {% endfor %}
                             </select>
-                            <input class="amount" type="number" name="amount" value="{{ x.value }}">
+                            <p class="change button">{{ Change }}</p>
                             <button class="button remove" type="button" name="remove">x</button>
                         </div>
                         {% endfor %}
