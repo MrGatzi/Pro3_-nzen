@@ -62,6 +62,9 @@ $(document).ready(function () {
 
         remove();
     });
+
+    $("#add").click(); //single row in the beginning
+
     remove();
     $('#portfolio').on("change", '.amount', function(){
         calcUSD();
