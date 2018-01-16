@@ -1,6 +1,7 @@
 <?php
+
+require __DIR__ . '/..\vendor\autoload.php';
 use phpFastCache\CacheManager;
-require __DIR__ . '/cache/src/autoload.php';
 /**
  * Created by PhpStorm.
  * User: Martin
