@@ -51,8 +51,6 @@ $(function() {
 
 $('#amount').on("input", function() {
 
-    console.log("anything");
-
     // save input into String
     dataString = $(this).serialize();
 

@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0804d1b4-8501-4ced-9f44-6bf67def0ae0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery-2.2.4.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/js.cookie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/loginSystem.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/signup.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/login.coffee" afterPath="$PROJECT_DIR$/js/loginSystem.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/login.js" afterPath="$PROJECT_DIR$/js/loginSystem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Pro3_-nzen.iml" afterPath="$PROJECT_DIR$/.idea/Pro3_-nzen.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/loginSystem.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/buttons.js" afterPath="$PROJECT_DIR$/public/js/buttons.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.twig" afterPath="$PROJECT_DIR$/templates/index.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login.twig" afterPath="$PROJECT_DIR$/templates/login.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login/config.php" afterPath="$PROJECT_DIR$/login/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/form.js" afterPath="$PROJECT_DIR$/public/js/form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/loginSystem.coffee" afterPath="$PROJECT_DIR$/public/js/loginSystem.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/signup.js" afterPath="$PROJECT_DIR$/public/js/signup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/register.twig" afterPath="$PROJECT_DIR$/templates/register.twig" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,22 +24,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.twig">
+      <file leaf-file-name="dbconf.php" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/dbconf.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1476">
-              <caret line="82" column="71" lean-forward="true" selection-start-line="82" selection-start-column="71" selection-end-line="82" selection-end-column="71" />
+            <state relative-caret-position="36">
+              <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="head.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/head.twig">
+      <file leaf-file-name="signup.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/signup.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="20" />
+              <folding>
+                <marker date="1516025258981" expanded="true" signature="397:404" ph="×" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/register.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginSystem.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/loginSystem.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+              <folding>
+                <marker date="1516027826441" expanded="true" signature="319:326" ph="×" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginSystem.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/loginSystem.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
-              <caret line="12" column="52" lean-forward="true" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
-              <folding />
+              <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+              <folding>
+                <marker date="1516027830232" expanded="true" signature="407:414" ph="×" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -52,18 +83,57 @@
       <file leaf-file-name="register.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/register.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+            <state relative-caret-position="54">
+              <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buttons.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/buttons.js">
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-486">
-              <caret line="60" column="28" lean-forward="true" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newuser.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login/newuser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+              <folding>
+                <marker date="1510648401131" expanded="true" signature="410:417" ph="×" />
+                <marker date="1510648401131" expanded="true" signature="485:498" ph="..." />
+                <marker date="1510648401131" expanded="true" signature="708:715" ph="×" />
+                <marker date="1510648401131" expanded="true" signature="795:808" ph="..." />
+                <marker date="1510648401131" expanded="true" signature="1028:1035" ph="×" />
+                <marker date="1510648401131" expanded="true" signature="1111:1124" ph="..." />
+                <marker date="1510648401131" expanded="true" signature="1653:1660" ph="×" />
+                <marker date="1510648401131" expanded="true" signature="1721:1734" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbconn.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login/includes/dbconn.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -90,13 +160,19 @@
         <option value="$PROJECT_DIR$/login/includes/newuserform.php" />
         <option value="$PROJECT_DIR$/login/includes/safeCoins.php" />
         <option value="$PROJECT_DIR$/templates/portfolio.twig" />
-        <option value="$PROJECT_DIR$/templates/register.twig" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/templates/head.twig" />
         <option value="$PROJECT_DIR$/templates/login.twig" />
         <option value="$PROJECT_DIR$/templates/index.twig" />
-        <option value="$PROJECT_DIR$/public/js/form.js" />
         <option value="$PROJECT_DIR$/public/js/buttons.js" />
+        <option value="$PROJECT_DIR$/public/js/form.js" />
+        <option value="$PROJECT_DIR$/login/config.php" />
+        <option value="$USER_HOME$/dbconf.php" />
+        <option value="$PROJECT_DIR$/templates/register.twig" />
+        <option value="$PROJECT_DIR$/public/js/signup.js" />
+        <option value="$PROJECT_DIR$/register.php" />
+        <option value="$PROJECT_DIR$/public/js/loginSystem.coffee" />
+        <option value="$PROJECT_DIR$/public/js/loginSystem.js" />
       </list>
     </option>
   </component>
@@ -113,7 +189,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
+    <option name="x" value="-7" />
     <option name="y" value="34" />
     <option name="width" value="974" />
     <option name="height" value="1053" />
@@ -148,6 +224,23 @@
             <path>
               <item name="Pro3_-nzen" type="b2602c69:ProjectViewProjectNode" />
               <item name="Pro3_-nzen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="loginSystem.coffee" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="Pro3_-nzen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pro3_-nzen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Pro3_-nzen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pro3_-nzen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Pro3_-nzen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pro3_-nzen" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -155,6 +248,13 @@
               <item name="Pro3_-nzen" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Pro3_-nzen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pro3_-nzen" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="loginSystem.coffee" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="Pro3_-nzen" type="b2602c69:ProjectViewProjectNode" />
@@ -256,7 +356,7 @@
       <workItem from="1511560434656" duration="4000" />
       <workItem from="1515438902129" duration="599000" />
       <workItem from="1515586215890" duration="83000" />
-      <workItem from="1516018443473" duration="3438000" />
+      <workItem from="1516018443473" duration="7244000" />
     </task>
     <task id="LOCAL-00001" summary="added v 1.0">
       <created>1510844964679</created>
@@ -269,11 +369,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16541000" />
+    <option name="totallyTimeSpent" value="20347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="26" width="1936" height="1062" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -314,41 +413,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/login/config.php</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/login.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/crypto.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/buttons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/portfolio.html.twig" />
     <entry file="file://$PROJECT_DIR$/templates/register.html.twig" />
     <entry file="file://$PROJECT_DIR$/templates/test.html" />
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
@@ -417,35 +493,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/dbconf.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login/globalcon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/newuser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -481,13 +529,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/login/includes/safeCoins.php" />
-    <entry file="file://$PROJECT_DIR$/login/includes/dbconn.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/signup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -511,17 +552,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/crypto.js" />
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-          <folding>
-            <marker date="1514996662437" expanded="true" signature="1489:1708" ph="..." />
-            <marker date="1514996662437" expanded="true" signature="1533:1682" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/portfolio.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -556,46 +586,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/signup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-          <folding>
-            <marker date="1510646822798" expanded="true" signature="397:404" ph="×" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/js.cookie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/portfolio.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="15" lean-forward="true" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -610,14 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1476">
-          <caret line="82" column="71" lean-forward="true" selection-start-line="82" selection-start-column="71" selection-end-line="82" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/head.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -626,19 +612,175 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/register.twig">
+    <entry file="file://$PROJECT_DIR$/public/js/buttons.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        <state relative-caret-position="162">
+          <caret line="96" column="16" lean-forward="true" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/buttons.js">
+    <entry file="file://$PROJECT_DIR$/public/js/js.cookie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="60" column="28" lean-forward="true" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="909">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="60" selection-end-column="3" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/dbconf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/dbconf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/includes/dbconn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/newuser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+          <folding>
+            <marker date="1510648401131" expanded="true" signature="410:417" ph="×" />
+            <marker date="1510648401131" expanded="true" signature="485:498" ph="..." />
+            <marker date="1510648401131" expanded="true" signature="708:715" ph="×" />
+            <marker date="1510648401131" expanded="true" signature="795:808" ph="..." />
+            <marker date="1510648401131" expanded="true" signature="1028:1035" ph="×" />
+            <marker date="1510648401131" expanded="true" signature="1111:1124" ph="..." />
+            <marker date="1510648401131" expanded="true" signature="1653:1660" ph="×" />
+            <marker date="1510648401131" expanded="true" signature="1721:1734" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/dbconf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portfolio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding>
+            <marker date="1514996662437" expanded="true" signature="1489:1708" ph="..." />
+            <marker date="1514996662437" expanded="true" signature="1533:1682" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/register.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/signup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <marker date="1516025258981" expanded="true" signature="397:404" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/loginSystem.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding>
+            <marker date="1516027826441" expanded="true" signature="319:326" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/loginSystem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <marker date="1516027830232" expanded="true" signature="407:414" ph="×" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -12,7 +12,7 @@ $(document).ready(function(){
     else {
       $.ajax({
         type: "POST",
-        url: "../login/newuser.php",
+        url: "login/newuser.php",
         data: "newuser="+email+"&password1="+password+"&password2="+password2,
         success: function(html){
 			var text = $(html).text();
