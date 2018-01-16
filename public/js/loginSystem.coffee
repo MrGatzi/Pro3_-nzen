@@ -7,7 +7,7 @@ $(document).ready ->
     else
       $.ajax
         type: "POST"
-        url: "checklogin.php"
+        url: "login/checklogin.php"
         data: "myemail=" + email + "&mypassword=" + password
         success: (html) ->
           if html is "true"
