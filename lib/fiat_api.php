@@ -1,11 +1,11 @@
 <?php
+require __DIR__ . '/..\vendor\autoload.php';
 use phpFastCache\CacheManager;
 /**
  * You don't use composer ?
  * Fine! PhpFastCache provides
  * his own autoloader.
  */#
-require __DIR__ . '/cache/src/autoload.php';
 
 $InstanceCache = CacheManager::getInstance('files');
 
