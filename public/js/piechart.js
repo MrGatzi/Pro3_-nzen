@@ -11,7 +11,7 @@ $(document).ready(function () {
     $.ajax({
         async: false,
         type: 'GET',
-        url: 'tests/getCoins.php',
+        url: 'lib/getCoins.php',
         success: function(data) {
             user=JSON.parse(data);
         },
