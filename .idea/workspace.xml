@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0804d1b4-8501-4ced-9f44-6bf67def0ae0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/login/includes/getID.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login/newuser.php" afterPath="$PROJECT_DIR$/login/newuser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portfolio.php" afterPath="$PROJECT_DIR$/portfolio.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <marker date="1516211206401" expanded="true" signature="1411:1630" ph="..." />
                 <marker date="1516211206401" expanded="true" signature="1455:1604" ph="{...}" />
@@ -60,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/login/newuser.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="535">
-              <caret line="44" column="27" lean-forward="true" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+              <caret line="44" column="27" lean-forward="false" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
               <folding>
                 <marker date="1516211037881" expanded="true" signature="489:496" ph="×" />
                 <marker date="1516211037881" expanded="true" signature="564:577" ph="..." />
@@ -77,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/login/includes/newuserform.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
-              <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+              <caret line="28" column="16" lean-forward="false" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
               <folding>
                 <marker date="1510647884578" expanded="true" signature="262:344" ph="INSERT INTO ${$tbl_user}... " />
               </folding>
@@ -99,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/login/checklogin.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -123,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/portfolio.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -372,7 +369,7 @@
       <workItem from="1516127729075" duration="409000" />
       <workItem from="1516128914289" duration="2385000" />
       <workItem from="1516189366120" duration="8916000" />
-      <workItem from="1516207037059" duration="4084000" />
+      <workItem from="1516207037059" duration="4680000" />
     </task>
     <task id="LOCAL-00001" summary="added v 1.0">
       <created>1510844964679</created>
@@ -385,7 +382,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36941000" />
+    <option name="totallyTimeSpent" value="37537000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="26" width="1936" height="1062" extended-state="6" />
@@ -744,7 +741,7 @@
     <entry file="file://$PROJECT_DIR$/login/checklogin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -752,7 +749,7 @@
     <entry file="file://$PROJECT_DIR$/login/includes/newuserform.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
-          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <caret line="28" column="16" lean-forward="false" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
           <folding>
             <marker date="1510647884578" expanded="true" signature="262:344" ph="INSERT INTO ${$tbl_user}... " />
           </folding>
@@ -762,7 +759,7 @@
     <entry file="file://$PROJECT_DIR$/login/newuser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
-          <caret line="44" column="27" lean-forward="true" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+          <caret line="44" column="27" lean-forward="false" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
           <folding>
             <marker date="1516211037881" expanded="true" signature="489:496" ph="×" />
             <marker date="1516211037881" expanded="true" signature="564:577" ph="..." />
@@ -795,7 +792,7 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <marker date="1516211206401" expanded="true" signature="1411:1630" ph="..." />
             <marker date="1516211206401" expanded="true" signature="1455:1604" ph="{...}" />
@@ -806,7 +803,7 @@
     <entry file="file://$PROJECT_DIR$/portfolio.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
