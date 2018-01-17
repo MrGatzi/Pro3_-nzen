@@ -36,16 +36,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { //if the us
         ),
     ];*/
     //get UsdDaten !
-    //$tUsdDaten = json_decode(getUSD(),true);
-    $tUsdDaten = [
-        "USD" => array(
-            "value" => 1
-        ),
-        "EUR" => array(
-            "value" => 0.88
-        ),
-    ];
-
+    $tUsdDaten = json_decode(getUSD(),true);
+  /*  $tUsdDaten = [
+        "USD" => 1,
+        "EUR" => 10.88,
+    ];*/
     echo $twig->render('portfolio.twig', array('username' => $_SESSION['user'],'tUserDaten' => $tUserDaten,'tCryptoDaten'=>$tCryptoDaten,'tUsdDaten'=>$tUsdDaten));
 }else {
 

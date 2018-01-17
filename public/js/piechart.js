@@ -43,7 +43,6 @@ $(document).ready(function () {
         url: 'lib/getColor.php',
         data: {json: JSON.stringify(values)},
         success: function(data) {
-            console.log(data);
             colors=JSON.parse(data);
         }
     });
