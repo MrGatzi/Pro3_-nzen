@@ -37,6 +37,7 @@ class Item implements ExtendedCacheItemInterface
     public function __construct(FilesDriver $driver, $key)
     {
         if (is_string($key)) {
+            date_default_timezone_set('UTC');
             $this->expirationDate = new \DateTime();
             $this->key = $key;
             $this->driver = $driver;

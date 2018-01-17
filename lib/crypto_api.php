@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/..´/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 use phpFastCache\CacheManager;
 /**
  * You don't use composer ?
