@@ -3,7 +3,7 @@ var stordUSDValues;
 $(document).ready(function () {
     getcrypto();
     getUSD();
-    updateSingleMoney();
+    updateRowValueFiat();
     var code = '\n <div class="newCurrency row">\n<input class="amount" type="text" name="amount" value="0">\n <select class="portfolio_values" name="currency"></select>\n <p name="CurrencyRowValue" class="change button">0</p>\n <button class="button remove" type="button" name="remove">x</button>\n </div>';
   //  var code = '\n <div class="newCurrency row">\n <select class="portfolio_values" name="currency">\n </select>\n <input class="amount" type="text" name="amount" value="0">\n <button class="button remove" type="button" name="remove">x</button>\n </div>\n';
    /* $.ajax({
@@ -62,21 +62,21 @@ $(document).ready(function () {
 
         remove();
     });
-
-    $("#add").click(); //single row in the beginning
-
-    remove();
+    $('.remove').click(function () {
+        $('.remove').click(function () {
+            var parent = $(this).parent();
+            parent.remove();
+            updateAllFiatsVallue();
+        });
+    });
     $('#portfolio').on("change", '.amount', function(){
-        calcUSD();
-        updateSingleMoney();
+        updateAllFiatsVallue();
     });
    $('#portfolio').on("change", '[name="currency"]', function(){
-        calcUSD();
-       updateSingleMoney();
+       updateAllFiatsVallue();
     });
     $('#calculator').on("change", '[name="money"]', function(){
-        updateMoney();
-        updateSingleMoney();
+        updateAllFiatsVallue();
     });
 });
 
@@ -86,9 +86,7 @@ function getcrypto() {
         type: 'GET',
         url: 'lib/crypto_api.php',
         success: function(data) {
-
             storedValues=JSON.parse(data);
-
         },
         fail: function(data) {
             return false;
@@ -102,26 +100,16 @@ function remove() {
     $('.remove').click(function () {
         var parent = $(this).parent();
         parent.remove();
-        calcUSD();
+        updateAllFiatsVallue();
     });
-    calcUSD();
+    updateAllFiatsVallue();
 
-}
-function calcUSD() {
-    var all=0;
-    $('.portfolio_values').each(function( index ) {
-         all = all +($( this ).val()*$( this ).prev().val());
-    });
-    all=Math.round(all*100)/100;
-    $('.output').text(all);
-    $('#user_worth').text(all)
 }
 function getUSD(){
     //eventuell Ajax anfrage wie bei get Crypto machen ?
     $.get("lib/fiat_api.php", function(data, status){
         stordUSDValues=JSON.parse(data);
-        $.each(stordUSDValues.rates, function( key, value ) {
-
+        $.each(stordUSDValues, function( key, value ) {
             $('[name="money"]').append($('<option>', {
                 value: value,
                 text: key
@@ -129,7 +117,7 @@ function getUSD(){
         });
     });
 }
-function updateMoney(){
+function updateAllValueFiat(){
     var all=0;
     $('[name="currency"]').each(function( index ) {
         all = all +($( this ).val()*$( this ).prev().val());
@@ -139,8 +127,12 @@ function updateMoney(){
     $('#user_worth').text(all);
     $('.output').text(all);
 }
-function updateSingleMoney(){
+function updateRowValueFiat(){
     $('[name="CurrencyRowValue"]').each(function( index ) {
-        $( this ).text(Math.round($( this ).prev().val()*$( this ).prev().prev().val()*100)/100);
+        $( this ).text(Math.round($( this ).prev().val()*$( this ).prev().prev().val()*100*$('[name="money"]').val())/100);
     });
+}
+function updateAllFiatsVallue(){
+    updateRowValueFiat();
+    updateAllValueFiat();
 }

@@ -15,18 +15,15 @@ $(document).ready(function () {
     $('#safe_button').click(function () {
         sendarrNew=[];
         $( ".newCurrency" ).each(function( index ) {
-            // console.log( $( this ).find(".portfolio_values").find("option:selected").text());
-            //  console.log( $( this ).find(".amount").val());
             if ($(this).find(".amount").val()!=0) {
                 sendarrNew.push({symbol: $(this).find(".portfolio_values").find("option:selected").text(), value: $(this).find(".amount").val()});
             }
         });
         $.ajax({
             type: "POST",
-            url: "lib/safeDataBaseCon.php",
+            url: "lib/dataBaseCon.php",
             data: {'data':sendarrNew},
             success: function(data) {
-                console.log(data);
             }
         });
     });

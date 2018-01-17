@@ -42,6 +42,7 @@ function getCrypto()
 
 
         $InstanceCache = CacheManager::getInstance('files');
+       // $InstanceCache->clear(); //clears cache
         $key = "fiat";
         $CachedString = $InstanceCache->getItem($key);
         if (is_null($CachedString->get())) {
