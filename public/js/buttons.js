@@ -147,85 +147,55 @@ function updateRowValueFiat(){
     });
 }
 function updateAllFiatsVallue(){
-    setCookies();
+    if (typeof getCookie  === "function") {
+        setCookies();
+    }
     updateRowValueFiat();
     updateTotalValueFiat();
 }
-function setCookies(){
-    var exdays=1; // safes cookies 5 days long !
-    var cookieString="";
-    $('[name="CurrencyRowValue"]').each(function( index ) {
-        if($( this ).prev().prev().val()>0){
-            cookieString=cookieString+[$( this ).prev().find("option:selected").text()]+"->"+$( this ).prev().prev().val()+"|";
-        }
-    });
 
-    cname="Coins"
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cookieString + ";" + expires + ";path=/";
-
-    var exchange;
-    exchange=$('[name="money"]').find("option:selected").text();
-    cname="Exchange"
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + exchange + ";" + expires + ";path=/";
-
-}
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
 function checkCookie() {
-    var coins = getCookie("Coins");
-    var exchange = getCookie("Exchange");
-    if (coins != ""&&exchange!="") {
-        singlecoin=coins.split("|");
-        for(var i = 0; i < singlecoin.length; i++) {
-            split=singlecoin[i].split("->");
-            value=split[1];
-            coin=split[0];
-            if(value>0){
-                var parent = $( "#portfolio" ),
-                    html = $.parseHTML(code);
-                console.log(value);
-                $(html[1]).find('.amount').val(value);
-                for (var index2 = 0; index2 < storedCoinValues.length; ++index2) {
-                    $(html[1]).find('.portfolio_values').append($("<option></option>")
-                        .attr("value",storedCoinValues[index2].value)
-                        .text(storedCoinValues[index2].symbol)
-                        .prop('selected', function(){
-                            if(storedCoinValues[index2].symbol==coin){
-                                return true;
-                            }else{
-                                return false;
-                            }
-                        })
-                    );
-                };
-                parent.append(html);
+    if (typeof getCookie  === "function") {
+        console.log("Checking for Cookies");
+        var coins = getCookie("Coins");
+        var exchange = getCookie("Exchange");
+        if (coins != ""&&exchange!="") {
+            singlecoin=coins.split("|");
+            for(var i = 0; i < singlecoin.length; i++) {
+                split=singlecoin[i].split("->");
+                value=split[1];
+                coin=split[0];
+                if(value>0){
+                    var parent = $( "#portfolio" );
+                    var  html = $.parseHTML(code);
+                    $(html[1]).find('.amount').val(value);
+                    for (var index2 = 0; index2 < storedCoinValues.length; ++index2) {
+                        $(html[1]).find('.portfolio_values').append($("<option></option>")
+                            .attr("value",storedCoinValues[index2].value)
+                            .text(storedCoinValues[index2].symbol)
+                            .prop('selected', function(){
+                                if(storedCoinValues[index2].symbol==coin){
+                                    return true;
+                                }else{
+                                    return false;
+                                }
+                            })
+                        );
+                    };
+                    parent.append(html);
 
-                remove();
+                    remove();
+                }
             }
-        }
-        if(!isNaN(stordUSDValues[exchange])){
-            $("#fiatoption option:contains("+exchange+")").prop('selected', true);
-            updateTotalValueFiat();
+            if(!isNaN(stordUSDValues[exchange])){
+                $("#fiatoption option:contains("+exchange+")").prop('selected', true);
+                updateTotalValueFiat();
+            }
+        }else{
+            console.log("no Cookies found.");
         }
     }else{
-       console.log("no Cookies found.");
+        console.log("Not checking for Cookies cause logged in. ");
     }
+
 }
