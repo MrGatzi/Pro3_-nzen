@@ -1,8 +1,6 @@
 {% include 'head.twig' %}
 
 <script src='{{"public/js/js.cookie.js"}}'></script>
-<script src='{{"public/js/form.js"}}'></script>
-
 
 <title>µnzen</title>
 </head>
@@ -56,8 +54,8 @@
         <fieldset>
             <div id="totalSum" class="container">
                 <div class="sum row">
-                    <select name="money"></select>
-                    <div class="output">{{ TotalSum }}</div>
+                    <select id="fiatoption" name="money"></select>
+                    <div class="output">1</div>
                 </div>
             </div>
         </fieldset>
