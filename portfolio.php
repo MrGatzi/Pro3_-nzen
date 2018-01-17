@@ -9,7 +9,6 @@ $twig = new Twig_Environment($loader);
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo $twig->render('portfolio.twig');
-
 } else{
     echo $twig->render('index.twig');
 }

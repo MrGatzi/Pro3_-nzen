@@ -7,6 +7,9 @@ $newpw = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $pw1 = $_POST['password'];
 $pw2 = $_POST['confirmPassword'];
 
+// Prevent MySQL injection
+$newuser = stripslashes($newuser);
+
 
 if ($pw1 != $pw2) {
 //if passwords do not match
@@ -33,9 +36,12 @@ if ($pw1 != $pw2) {
         //Success
         if ($response == 'true') {
 
+            $getID = new getID();
+            $conf = new GlobalConf;
+            $_SESSION['iduser'] = $getID->getUserID($newuser);
             $_SESSION['loggedin'] = true;
             $_SESSION['error'] = false;
-            $_SESSION['user'] = $_POST['email'];
+            $_SESSION['user'] = $newuser;
             ob_end_flush();
             header('Location:../portfolio.php');
             exit();
