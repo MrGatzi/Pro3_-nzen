@@ -1,6 +1,8 @@
+
+
 $(document).ready(function(){
 
-  $("#submit").click(function(){
+  $("#up").click(function(){
 
     var password = $("#password").val();
     var password2 = $("#confirmPassword").val();

@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/functions.php';
 include_once 'config.php';
-
+session_start();
 $newuser = $_POST['email'];
 $newpw = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $pw1 = $_POST['password'];
@@ -33,7 +33,12 @@ if ($pw1 != $pw2) {
         //Success
         if ($response == 'true') {
 
-            echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'. $signupthanks .'</div><div id="returnVal" style="display:none;">true</div>';
+            $_SESSION['loggedin'] = true;
+            $_SESSION['error'] = false;
+            $_SESSION['user'] = $_POST['email'];
+            ob_end_flush();
+            header('Location:../portfolio.php');
+            exit();
 
         } else {
             //Failure

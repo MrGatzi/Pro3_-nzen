@@ -1,8 +1,9 @@
 {% include 'head.twig' %}
 
+
 <title>Create your portfolio</title>
 </head>
-
+<script src='{{"public/js/signup.js"}}'></script>
 <body>
 <main class="main">
 
@@ -12,7 +13,7 @@
     </p>
 
     <div>
-        <form class="register" id="register" name="register" method="post" action="login/newuser.php">
+        <form class="register" id="register" name="register" method="post" action='login/newuser.php'>
             <fieldset class="name">
                 <div class="col-sm-6 form-group">
                     <label>FIRST NAME</label>
@@ -37,12 +38,12 @@
                 <span class="highlight"></span>
                 <span class="bar"></span>
             </fieldset>
-            <button class="up" type="submit" name="submit" id="submit">CREATE MY PORTFOLIO</button>
+            <button class="up" class=create" type="submit" name="submit" id="submit">CREATE MY PORTFOLIO</button>
         </form>
         <a href="index.php" class="link">ALREADY HAVE A PORTFOLIO?</a>
     </div>
 </main>
-<script src='{{"public/js/signup.js"}}'></script>
+
 <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
 <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 <script>
