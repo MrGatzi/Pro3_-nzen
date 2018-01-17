@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     getcrypto();
     getUSD();
-    updateRowValueFiat(); // brauch i daS=?
+    updateRowValueFiat();
 
     /* $.ajax({
         async: false,
@@ -79,7 +79,7 @@ $(document).ready(function () {
    $('#portfolio').on("change", '[name="currency"]', function(){
        updateAllFiatsVallue();
     });
-    $('#calculator').on("change", '[name="money"]', function(){
+    $('body').on("change", '[name="money"]', function(){
         updateAllFiatsVallue();
     });
     checkCookie();

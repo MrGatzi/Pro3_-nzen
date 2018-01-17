@@ -27,5 +27,9 @@ $(document).ready(function () {
             }
         });
     });
+
+});
+$(window).load(function() {
+    getUSD();
     updateAllFiatsVallue();
 });
