@@ -30,8 +30,9 @@ function startChart(){
     });
     $.ajax({
         async: false,
-        type: 'GET',
-        url: 'lib/crypto_api.php',
+        type: 'POST',
+        url: 'lib/apiCon.php',
+        data: {'crypto':true},
         success: function(data) {
             coins=JSON.parse(data);
         },
@@ -81,8 +82,9 @@ function updateChart(sendarrNew){
     var coins;
     $.ajax({
         async: false,
-        type: 'GET',
-        url: 'lib/crypto_api.php',
+        type: 'POST',
+        url: 'lib/apiCon.php',
+        data: {'crypto':true},
         success: function(data) {
             coins=JSON.parse(data);
         },

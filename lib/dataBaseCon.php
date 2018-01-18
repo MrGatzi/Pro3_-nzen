@@ -19,17 +19,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST" ) {
 function getUserCoins(){
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $iduser=$_SESSION['iduser'];
-
-
     $host = "localhost"; // Host name
     $email = "root"; // Mysql email
     $password = ""; // Mysql password
     $db_name = "munzn"; // Database name
-    $id = 1;
-    $currency = 'XRP';
-    $amount = 110;
-
-//DO NOT CHANGE BELOW THIS LINE UNLESS YOU CHANGE THE NAMES OF THE MEMBERS AND LOGINATTEMPTS TABLES
 
     $tbl_prefix = "";
     $tbl_user = $tbl_prefix."user";
@@ -49,7 +42,6 @@ function getUserCoins(){
         print "Error!: " . $e->getMessage() . "<br/>";
         die();
     }
-    //var_dump($res);
     return json_encode($res);
 
     }
@@ -67,10 +59,7 @@ function safeUserCoins(){
         $email = "root"; // Mysql email
         $password = ""; // Mysql password
         $db_name = "munzn"; // Database name
-        $currency = 'DOGE';
-        $amount = 0.1;
 
-//DO NOT CHANGE BELOW THIS LINE UNLESS YOU CHANGE THE NAMES OF THE MEMBERS AND LOGINATTEMPTS TABLES
 
         $tbl_prefix = "";
         $tbl_coins = $tbl_prefix . "coins";
@@ -89,7 +78,10 @@ function safeUserCoins(){
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql_stmt="";
             foreach ($_POST['data'] as &$value) {
-                $sql_stmt.="INSERT INTO " . $tbl_coins . " (user_iduser, currency,amount) VALUES (".$iduser.", \"".$value['symbol']."\",".$value['value'].");";
+                if(is_numeric($value['value'])){
+                    $sql_stmt.="INSERT INTO " . $tbl_coins . " (user_iduser, currency,amount) VALUES (".$iduser.", \"".$value['symbol']."\",".$value['value'].");";
+                }
+
             }
             $stmt = $conn->prepare($sql_stmt);
             $statement = $stmt->execute();

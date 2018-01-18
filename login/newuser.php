@@ -49,6 +49,7 @@ if($newuser === $getData->getUserData($newuser, "email")){
             $_SESSION['username'] = $username;
             unset($_SESSION['registerErr']);
             ob_end_flush();
+            //save data
             header('Location:../portfolio.php');
             exit();
 

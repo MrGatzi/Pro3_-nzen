@@ -8,6 +8,15 @@ use phpFastCache\CacheManager;
  * Date: 17.11.2017
  * Time: 23:19
  */
+if($_SERVER['REQUEST_METHOD'] == "POST" ) {
+    header('HTTP/1.1 200 OK');
+    if(isset($_POST['crypto'])){
+        echo getCrypto();
+    }
+    if(isset($_POST['fiat'])){
+        echo getUSD();
+    }
+}
 function getCrypto()
 {
 

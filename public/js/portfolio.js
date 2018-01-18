@@ -25,7 +25,6 @@ $(document).ready(function () {
             url: "lib/dataBaseCon.php",
             data: {'data':sendarrNew,'safe': true},
             success: function(data) {
-                console.log(sendarrNew);
                 updateChart(sendarrNew);
             }
         });
