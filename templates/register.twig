@@ -44,11 +44,40 @@
                 <span class="highlight"></span>
                 <span class="bar"></span>
             </fieldset>
+            <fieldset class="currency">
+                <label>CURRENCY</label>
+                <select id="fiatoption" name="money"></select>
+            </fieldset>
             <button class="up" class=create" type="submit" name="submit" id="submit">CREATE MY PORTFOLIO</button>
         </form>
         <a href="index.php" class="link">ALREADY HAVE A PORTFOLIO?</a>
     </div>
 </main>
+<div id="loginForm">
+    <div class="loginBox">
+        <div class="login-content">
+            <button class="offset-8" id="close">CLOSE</button>
+            <h2>WELCOME BACK</h2>
+            <p>LOGIN TO YOUR ACCOUNT</p>
+            <!-- Displaying error message -->
+            {% if error == true %}
+                <fieldset>
+                    <p class="error">Sorry, something went wrong.<br>Please try again:</p>
+                </fieldset>
+            {% endif %}
+            <form method="post" action="login/checklogin.php">
+                <fieldset id="input">
+                    <input id="myemail" type="text" name="myemail" placeholder="EMAIL ADDRESS" required>
+                    <input id="mypassword" type="password" name="mypassword" placeholder="PASSWORD" required>
+                </fieldset>
+                <fieldset id="action">
+                    <button class="up" type="submit" name="submit" value="SIGN IN">SIGN IN</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
 <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
