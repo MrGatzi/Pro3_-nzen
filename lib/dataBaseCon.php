@@ -8,7 +8,13 @@
 session_start();
 if($_SERVER['REQUEST_METHOD'] == "POST" ) {
     header('HTTP/1.1 200 OK');
-    echo safeUserCoins();
+    if(isset($_POST['safe'])){
+        echo safeUserCoins();
+    }
+    if(isset($_POST['take'])){
+        echo getUserCoins();
+    }
+
 }
 function getUserCoins(){
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
@@ -91,5 +97,6 @@ function safeUserCoins(){
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
         }
+        echo "saged";
     }
 }

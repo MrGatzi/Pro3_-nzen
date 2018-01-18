@@ -15,7 +15,7 @@ if(isset($_POST['json'])) {
     }
     echo json_encode($res);
 } else {
-    echo "Noooooooo";
+    echo "Error while trying to get Colors";
 }
 
 function random_color_part() {

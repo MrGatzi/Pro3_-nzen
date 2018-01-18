@@ -20,10 +20,13 @@ $(document).ready(function () {
             }
         });
         $.ajax({
+            async: false,
             type: "POST",
             url: "lib/dataBaseCon.php",
-            data: {'data':sendarrNew},
+            data: {'data':sendarrNew,'safe': true},
             success: function(data) {
+                console.log(sendarrNew);
+                updateChart(sendarrNew);
             }
         });
     });
