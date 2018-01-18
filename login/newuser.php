@@ -6,10 +6,11 @@ $newuser = $_POST['email'];
 $newpw = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $pw1 = $_POST['password'];
 $pw2 = $_POST['confirmPassword'];
+$username = $_POST['username'];
 
 // Prevent MySQL injection
 $newuser = stripslashes($newuser);
-
+$username = stripslashes($username);
 
 if ($pw1 != $pw2) {
 //if passwords do not match
@@ -31,17 +32,18 @@ if ($pw1 != $pw2) {
 
         $a = new NewUserForm;
 
-        $response = $a->createUser($newuser, $newpw);
+        $response = $a->createUser($username, $newuser, $newpw);
 
         //Success
         if ($response == 'true') {
 
-            $getID = new getID();
+            $getData = new getUser();
             $conf = new GlobalConf;
-            $_SESSION['iduser'] = $getID->getUserID($newuser);
+            $_SESSION['iduser'] = $getData->getUserData($newuser, "iduser");
             $_SESSION['loggedin'] = true;
             $_SESSION['error'] = false;
             $_SESSION['user'] = $newuser;
+            $_SESSION['username'] = $username;
             ob_end_flush();
             header('Location:../portfolio.php');
             exit();

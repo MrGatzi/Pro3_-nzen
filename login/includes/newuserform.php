@@ -1,15 +1,16 @@
 <?php
 class NewUserForm extends DbConn
 {
-    public function createUser($email, $pw)
+    public function createUser($username, $email, $pw)
     {
         try {
 
             $db = new DbConn;
             $tbl_user = $db->tbl_user;
             // prepare sql and bind parameters
-            $stmt = $db->conn->prepare("INSERT INTO ".$tbl_user." (email, password)
-            VALUES (:email, :password)");
+            $stmt = $db->conn->prepare("INSERT INTO ".$tbl_user." (username, email, password)
+            VALUES (:username, :email, :password)");
+            $stmt->bindParam(':username', $username);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':password', $pw);
             $stmt->execute();

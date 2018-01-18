@@ -1,8 +1,8 @@
 <?php
 require_once 'dbconn.php';
-class getID extends DbConn
+class getUser extends DbConn
 {
-    public function getUserID($user){
+    public function getUserData($user, $option){
         $conf = new GlobalConf;
 
         try {
@@ -14,6 +14,7 @@ class getID extends DbConn
         } catch (PDOException $e) {
 
             $err = "Error: " . $e->getMessage();
+            return $err;
 
         }
 
@@ -24,7 +25,10 @@ class getID extends DbConn
         // Gets query result
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        return $result['iduser'];
-
+        if($option === "all"){
+            return $result;
+        }
+        return $result[$option];
     }
+
 }

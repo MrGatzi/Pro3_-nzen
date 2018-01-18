@@ -41,7 +41,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { //if the us
         "USD" => 1,
         "EUR" => 10.88,
     ];*/
-    echo $twig->render('portfolio.twig', array('username' => $_SESSION['user'],'tUserDaten' => $tUserDaten,'tCryptoDaten'=>$tCryptoDaten,'tUsdDaten'=>$tUsdDaten));
+    echo $twig->render('portfolio.twig', array('username' => $_SESSION['username'],'tUserDaten' => $tUserDaten,'tCryptoDaten'=>$tCryptoDaten,'tUsdDaten'=>$tUsdDaten));
 }else {
 
     if (isset($_SESSION['error']) && $_SESSION['error'] === true){
