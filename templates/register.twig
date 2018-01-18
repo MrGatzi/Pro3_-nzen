@@ -13,6 +13,12 @@
     </p>
 
     <div>
+        <!-- Displaying error message -->
+        {% if error is defined %}
+            <fieldset>
+                <p class="error">{{ error }}<br>Please try again:</p>
+            </fieldset>
+        {% endif %}
         <form class="register" id="register" name="register" method="post" action='login/newuser.php'>
             <fieldset class="name">
                 <div class="col-sm-6 form-group">

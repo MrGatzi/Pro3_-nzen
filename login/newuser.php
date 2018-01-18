@@ -12,20 +12,23 @@ $username = $_POST['username'];
 $newuser = stripslashes($newuser);
 $username = stripslashes($username);
 
-if ($pw1 != $pw2) {
+$getData = new getUser();
+
+if($newuser === $getData->getUserData($newuser, "email")){
+    //duplicate email
+    $_SESSION['registerErr'] = "This email is already in use!";
+    errorExit();
+
+} else if ($pw1 != $pw2) {
 //if passwords do not match
-    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Password fields must match</div><div id="returnVal" style="display:none;">false</div>';
+    $_SESSION['registerErr'] = "Passwords must match!";
+    errorExit();
 
-} elseif (strlen($pw1) < 4) {
+} else if (strlen($pw1) < 4) {
 //if password is too short
-    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Password must be at least 4 characters</div><div id="returnVal" style="display:none;">false</div>';
-
-} elseif (!filter_var($newuser, FILTER_VALIDATE_EMAIL) == true) {
-
-    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Must provide a valid email address</div><div id="returnVal" style="display:none;">false</div>';
-
+    $_SESSION['registerErr'] = "Password must be at least 4 characters";
+    errorExit();
 } else {
-
     if (isset($_POST['email']) && !empty(str_replace(' ', '', $_POST['email'])) && isset($_POST['password']) && !empty(str_replace(' ', '', $_POST['password']))) {
 
         //Tries inserting into database and add response to variable
@@ -37,13 +40,14 @@ if ($pw1 != $pw2) {
         //Success
         if ($response == 'true') {
 
-            $getData = new getUser();
+
             $conf = new GlobalConf;
             $_SESSION['iduser'] = $getData->getUserData($newuser, "iduser");
             $_SESSION['loggedin'] = true;
             $_SESSION['error'] = false;
             $_SESSION['user'] = $newuser;
             $_SESSION['username'] = $username;
+            unset($_SESSION['registerErr']);
             ob_end_flush();
             header('Location:../portfolio.php');
             exit();
@@ -54,7 +58,14 @@ if ($pw1 != $pw2) {
 
         }
     } else {
-
-        echo 'An error occurred on the form... try again';
+        ob_end_flush();
+        header('Location:../register.php');
+        exit();
     }
 };
+
+function errorExit(){
+    ob_end_flush();
+    header('Location:../register.php');
+    exit();
+}

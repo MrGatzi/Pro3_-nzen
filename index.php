@@ -44,6 +44,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { //if the us
     echo $twig->render('portfolio.twig', array('username' => $_SESSION['username'],'tUserDaten' => $tUserDaten,'tCryptoDaten'=>$tCryptoDaten,'tUsdDaten'=>$tUsdDaten));
 }else {
 
+    //opens the login window if there is a login error
     if (isset($_SESSION['error']) && $_SESSION['error'] === true){
 
         echo $twig->render('index.twig', array('error' => true));
@@ -51,15 +52,30 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { //if the us
         // reopens the login dialogue after the failed login attempt
         echo '<script>
               $(document).ready(function(){ 
-                $(\'#loginForm\').removeAttr(\'class\').addClass(\'log\');
-                $(\'body\').addClass(\'login-active\');
+        $(\'#loginForm\').removeAttr(\'class\').addClass(\'log\');
+        $(\'body\').addClass(\'login-active\');
+        $(\'main\').addClass(\'login-active\');
               });
                </script>';
+
         $_SESSION['error'] = false;
 
-    }else {
+        //opens the login window when the user is coming from the register
+    }else if (isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'register.php') !== false){
+
+        echo $twig->render('index.twig', array('error' => false));
+
+        // reopens the login dialogue after the failed login attempt
+        echo '<script>
+              $(document).ready(function(){ 
+        $(\'#loginForm\').removeAttr(\'class\').addClass(\'log\');
+        $(\'body\').addClass(\'login-active\');
+        $(\'main\').addClass(\'login-active\');
+              });
+               </script>';
+
+    }else{
         echo $twig->render('index.twig', array('error' => false));
     }
-
 }
 
