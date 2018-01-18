@@ -82,14 +82,19 @@ $(document).ready(function () {
     $('body').on("change", '[name="money"]', function(){
         updateAllFiatsVallue();
     });
+    $('#registerlink').click(function () {
+        window.location.href = 'register.php';
+        return false;
+    });
     checkCookie();
 });
 
 function getcrypto() {
     $.ajax({
         async: false,
-        type: 'GET',
-        url: 'lib/crypto_api.php',
+        type: 'POST',
+        url: 'lib/apiCon.php',
+        data: {'crypto':true},
         success: function(data) {
             storedCoinValues=JSON.parse(data);
         },
@@ -113,8 +118,9 @@ function remove() {
 function getUSD() {
     $.ajax({
         async: false,
-        type: 'GET',
-        url: 'lib/fiat_api.php',
+        type: 'POST',
+        url: 'lib/apiCon.php',
+        data: {'fiat':true},
         success: function (data) {
             stordUSDValues = JSON.parse(data);
             $.each(stordUSDValues, function (key, value) {
