@@ -68,4 +68,60 @@
         </section>
 
     </main>
+    <div id="userForm">
+        <div class="userBox">
+            <div class="user-content">
+                <button class="offset-8" id="close">CLOSE</button>
+                <h2>PROFIL</h2>
+                <p>What would you like to do, {{ username }}?</p>
+                <button>Change my name</button>
+                <div class="usernameChange">
+                    <form method="post" action="??">
+                        <p>How may I address you?</p>
+                        <fieldset id="input">
+                            <input id="newName" type="text" name="newName" required>
+                        </fieldset>
+                        <fieldset id="action">
+                            <button class="up" type="submit" name="submit" value="Change">CHANGE</button>
+                        </fieldset>
+                    </form>
+                </div>
+                <button>Change my password</button>
+                <div class="passwortChange">
+                    <form method="post" action="??">
+                        {% if error == true %}
+                            <fieldset>
+                                <p class="error">Sorry, something went wrong.<br>Please try again:</p>
+                            </fieldset>
+                        {% endif %}
+                        <p>Please enter your old password:</p>
+                        <fieldset id="input">
+                            <input id="oldpassword" type="password" name="oldPassword" required>
+                        </fieldset>
+                        <p>Please enter your new password:</p>
+                        <fieldset id="input">
+                            <input id="newpassword" type="password" name="newPassword" required>
+                            <input id="repeatpassword" type="password" name="repeatPassword" required>
+                        </fieldset>
+                        <fieldset id="action">
+                            <button class="up" type="submit" name="submit" value="Change">CHANGE</button>
+                        </fieldset>
+                    </form>
+                </div>
+                <button>Change currency</button>
+                <div class="currencyChange">
+                    <form method="post" action="??">
+                        <p>Please select a currency:</p>
+                        <fieldset id="input">
+                            <select id="fiatoption" name="money"></select>
+                        </fieldset>
+                        <fieldset id="action">
+                            <button class="up" type="submit" name="submit" value="Change">CHANGE</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
