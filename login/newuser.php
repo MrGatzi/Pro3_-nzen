@@ -50,7 +50,7 @@ if($newuser === $getData->getUserData($newuser, "email")){
             unset($_SESSION['registerErr']);
             ob_end_flush();
             //save data
-            header('Location:../portfolio.php');
+            header('Location:../save.php');
             exit();
 
         } else {
