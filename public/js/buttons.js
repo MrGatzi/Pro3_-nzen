@@ -1,6 +1,6 @@
 var storedCoinValues;
 var stordUSDValues;
-var code = '\n <div class="newCurrency row">\n<input class="amount" type="text" name="amount" value="0">\n <select class="portfolio_values" name="currency"></select>\n <p name="CurrencyRowValue" class="change button">0</p>\n <button class="button remove" type="button" name="remove">x</button>\n </div>';
+var code = '\n <div class="newCurrency row">\n<input class="amount" type="text" name="amount" value="1">\n <select class="portfolio_values" name="currency"></select>\n <p name="CurrencyRowValue" class="change button">0</p>\n <button class="button remove" type="button" name="remove">x</button>\n </div>';
 //  var code = '\n <div class="newCurrency row">\n <select class="portfolio_values" name="currency">\n </select>\n <input class="amount" type="text" name="amount" value="0">\n <button class="button remove" type="button" name="remove">x</button>\n </div>\n';
 
 $(document).ready(function () {
