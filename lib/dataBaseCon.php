@@ -78,8 +78,8 @@ function safeUserCoins(){
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql_stmt="";
             foreach ($_POST['data'] as &$value) {
-                if(is_numeric($value['value'])){
-                    $sql_stmt.="INSERT INTO " . $tbl_coins . " (user_iduser, currency,amount) VALUES (".$iduser.", \"".$value['symbol']."\",".$value['value'].");";
+                if(is_numeric($value['value'])&&$value['value']>0){
+                    $sql_stmt.="INSERT INTO " . $tbl_coins . " (user_iduser, currency,amount) VALUES (".$iduser.", \"".htmlspecialchars($value['symbol'])."\",".$value['value'].");";
                 }
 
             }
