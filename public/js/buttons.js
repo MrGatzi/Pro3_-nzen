@@ -52,7 +52,7 @@ $(document).ready(function () {
             parent.append(html);
         }
     });*/
-    $('#add').click(function () {
+    $('#add').unbind('click').bind('click', function () {
         getcrypto();
         var parent = $( "#portfolio" ),
             html = $.parseHTML(code);
@@ -65,6 +65,7 @@ $(document).ready(function () {
         parent.append(html);
 
         remove();
+        return false;
     });
     $('.remove').click(function () {
         $('.remove').click(function () {
