@@ -70,7 +70,7 @@
             <!-- Displaying error message -->
             {% if error == true %}
                 <fieldset>
-                    <p class="error">Sorry, something went wrong.<br>Please try again:</p>
+                    <p class="error">Incorrect email or password.<br>Please try again:</p>
                 </fieldset>
             {% endif %}
             <form method="post" action="login/checklogin.php">
@@ -90,3 +90,11 @@
     </div>
 </div>
 </body>
+
+{% if error == true %}
+    <script>
+        $('#upForm').removeAttr('class').addClass('log');
+        $('body').addClass('up-active');
+        $('main').addClass('up-active');
+    </script>
+{% endif %}

@@ -22,6 +22,6 @@ $(document).ready(function(){
     });
 
     $('#usernameChange').addClass('hidden');
-    $('#passwortChange').addClass('hidden');
+    //$('#passwortChange').addClass('hidden');
 
 });

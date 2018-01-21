@@ -41,7 +41,15 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { //if the us
         "USD" => 1,
         "EUR" => 10.88,
     ];*/
-    echo $twig->render('portfolio.twig', array('username' => $_SESSION['username'],'tUserDaten' => $tUserDaten,'tCryptoDaten'=>$tCryptoDaten,'tUsdDaten'=>$tUsdDaten));
+    if (isset($_SESSION['pwdChange'])){
+        echo $twig->render('portfolio.twig', array('username' => $_SESSION['username'],'tUserDaten' => $tUserDaten,'tCryptoDaten'=>$tCryptoDaten,'tUsdDaten'=>$tUsdDaten, 'error'=>$_SESSION['pwdChange']));
+        unset($_SESSION['pwdChange']);
+        exit();
+
+
+    }else{
+        echo $twig->render('portfolio.twig', array('username' => $_SESSION['username'],'tUserDaten' => $tUserDaten,'tCryptoDaten'=>$tCryptoDaten,'tUsdDaten'=>$tUsdDaten));
+    }
 }else {
 
     //opens the login window if there is a login error

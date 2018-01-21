@@ -14,7 +14,7 @@
 
 <header>
     <div class="offset-8 col-4">
-        <button class="user white">PROFIL</button>
+        <button class="user white">ACCOUNT</button>
     </div>
 
     <div>
@@ -90,16 +90,11 @@
         <div class="upBox">
             <div class="up-content">
                 <button class="offset-8" id="close">CLOSE</button>
-                <h2>PROFIL</h2>
+                <h2>ACCOUNT</h2>
                 <p>What would you like to do, {{ username }}?</p>
                 <button id="name" class="black_width">CHANGE MY NAME</button>
                 <div id="usernameChange">
-                    <form method="post" action="??">
-                        {% if error == true %}
-                            <fieldset>
-                                <p class="error">Sorry, something went wrong.<br>Please try again:</p>
-                            </fieldset>
-                        {% endif %}
+                    <form method="post" action='login/changename.php'>
                         <fieldset id="input">
                             <label>How may I address you?</label>
                             <input id="newName" type="text" name="newName" required>
@@ -110,11 +105,15 @@
                     </form>
                 </div>
                 <button id="password" class="black_width">CHANGE MY PASSWORD</button>
+                {% if error is defined %}
                 <div id="passwortChange">
-                    <form method="post" action="??">
-                        {% if error == true %}
+                    {% else %}
+                    <div id="passwortChange" class="hidden">
+                        {% endif %}
+                    <form method="post" action="login/changepassword.php">
+                        {% if error is defined %}
                             <fieldset>
-                                <p class="error">Sorry, something went wrong.<br>Please try again:</p>
+                                <p class="error">{{ error }}</p>
                             </fieldset>
                         {% endif %}
                         <fieldset id="input">
@@ -137,3 +136,10 @@
     </div>
 
 </body>
+
+{% if error is defined %}
+    <script>
+        $('#upForm').removeAttr('class').addClass('log');
+        $('body').addClass('up-active');
+    </script>
+{% endif %}

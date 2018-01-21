@@ -11,7 +11,6 @@ $password = $_POST['mypassword'];
 
 // Prevent MySQL injection
 $email = stripslashes($email);
-$password = stripcslashes($password);
 
 $loginCtl = new LoginForm;
 $conf = new GlobalConf;
@@ -21,7 +20,7 @@ if($check === 'true'){
     $getData = new getUser();
     $data = $getData->getUserData($email, "all");
     $_SESSION['iduser'] = $data['iduser'];
-    $_SESSION['username'] = $data['username'];
+    $_SESSION['username'] = htmlspecialchars($data['username']);
     $_SESSION['loggedin'] = true;
     $_SESSION['error'] = false;
     $_SESSION['user'] = $email;
