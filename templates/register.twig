@@ -1,84 +1,78 @@
 {% include 'head.twig' %}
-
-
 <title>Create your portfolio</title>
 </head>
+<script src='{{"public/js/signup.js"}}'></script>
+<body class="bg">
 
-<body>
-<main class="main">
+    <main class="dark offset-lg-1 col-lg-5 col-md-6 col-sm-12 float-left">
+        <img id="logo" src="images/logo_w.png" height="131" width="163">
+        <h1>CREATE YOUR PORTFOLIO</h1>
+        <p>
+            Join us and manage all your cryptocurrencies.
+        </p>
+        <p  class="space">ALREADY HAVE A PORTFOLIO?</p>
+        <button class="login white">SIGN IN</button>
 
-    <h1 class="offset-lg-3 col-lg-6 offset-lg-3 offset-sm-2 col-sm-8 offset-sm-2">Create your portfolio!</h1>
-    <p id="explanation" class="offset-lg-2 col-lg-8 offset-lg-2 offset-sm-1 col-sm-10 offset-sm-1">
-        Join us and manage all your cryptocurrencies.
-    </p>
-
-    <div>
-        <!-- Displaying error message -->
-        {% if error is defined %}
-            <fieldset>
-                <p class="error">{{ error }}<br>Please try again:</p>
-            </fieldset>
-        {% endif %}
-        <form class="register" id="register" name="register" method="post" action='login/newuser.php'>
-            <fieldset class="name">
-                <div class="col-sm-6 form-group">
-                    <label>FIRST NAME</label>
-                    <input type="text" name="username" placeholder="YOUR FIRST NAME" class="form-control">
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                </div>
-            </fieldset>
-            <fieldset class="email">
-                <label>EMAIL ADDRESS</label>
-                <input type="text" name="email" id="email" placeholder="YOUR EMAIL ADDRESS" class="form-control">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-            </fieldset>
-            <fieldset class="password">
-                <label>PASSWORD</label>
-                <input type="password" name="password" id="password" placeholder="YOUR PASSWORD" class="form-control">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>CONFIRM PASSWORD</label>
-                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="CONFIRM YOUR PASSWORD" class="form-control">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-            </fieldset>
-
-            <button class="up" class=create" type="submit" name="submit" id="submit">CREATE MY PORTFOLIO</button>
-        </form>
-        <a href="index.php" class="link">ALREADY HAVE A PORTFOLIO?</a>
-    </div>
-</main>
-<div id="loginForm">
-    <div class="loginBox">
-        <div class="login-content">
-            <button class="offset-8" id="close">CLOSE</button>
-            <h2>WELCOME BACK</h2>
-            <p>LOGIN TO YOUR ACCOUNT</p>
-            <!-- Displaying error message -->
-            {% if error == true %}
-                <fieldset>
-                    <p class="error">Sorry, something went wrong.<br>Please try again:</p>
+    </main>
+    <div class="split col-lg-5 col-md-6 float-left">
+        <div>
+            <form class="register" id="register" name="register" method="post" action='login/newuser.php'>
+                <!-- Displaying error message -->
+                {% if error is defined %}
+                    <fieldset>
+                        <p class="error">{{ error }}<br>Please try again:</p>
+                    </fieldset>
+                {% endif %}
+                <fieldset class="name">
+                    <label class="col-12">FIRST NAME</label>
+                    <input type="text" name="username">
                 </fieldset>
-            {% endif %}
-            <form method="post">
-                <fieldset id="input">
-                    <input id="myemail" type="text" name="myemail" placeholder="EMAIL ADDRESS" required>
-                    <input id="mypassword" type="password" name="mypassword" placeholder="PASSWORD" required>
+                <fieldset class="email">
+                    <label class="col-12">EMAIL ADDRESS</label>
+                    <input type="text" name="email" id="email">
                 </fieldset>
-                <fieldset id="action">
-                    <button class="up" type="submit" name="submit" value="SIGN IN">SIGN IN</button>
+                <fieldset class="password">
+                    <label class="col-12">PASSWORD</label>
+                    <input type="password" name="password" id="password">
+                    <label class="col-12">CONFIRM PASSWORD</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword">
                 </fieldset>
+                <button class="black create" type="submit" name="submit" id="submit">CREATE MY PORTFOLIO</button>
             </form>
         </div>
     </div>
-</div>
+    <div id="upForm">
+        <div class="upBox">
+            <div class="up-content">
+                <button class="offset-8" id="close">CLOSE</button>
+                <h2>WELCOME BACK</h2>
+                <p class="spaceAfter">LOGIN TO YOUR ACCOUNT</p>
+                <!-- Displaying error message -->
+                {% if error == true %}
+                    <fieldset>
+                        <p class="error">Sorry, something went wrong.<br>Please try again:</p>
+                    </fieldset>
+                {% endif %}
+                <form method="post" action="login/checklogin.php">
+                    <fieldset id="input">
+                        <label>EMAIL ADDRESS</label>
+                        <input id="myemail" type="text" name="myemail" required>
+                        <label>PASSWORD</label>
+                        <input id="mypassword" type="password" name="mypassword" required>
+                    </fieldset>
+                    <fieldset id="action">
+                        <button class="black" type="submit" name="submit" value="SIGN IN">SIGN IN</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
 <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 <script>
+
     $( "#register" ).validate({
         rules: {
             email: {

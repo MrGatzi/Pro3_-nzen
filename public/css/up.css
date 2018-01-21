@@ -1,57 +1,50 @@
-html.login-active, body.login-active {
+html.up-active, body.up-active {
     overflow: hidden;
 }
 
-main.login-active {
-    filter: blur(20px);
-}
-
-#loginForm {
-    color: #ffffff;
-}
-
-#loginForm {
-    color: #2a2a2a;
+#upForm {
+    color: var(--black);
     position: fixed;
     display: table;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
+    overflow-y: scroll;
     transform: scale(0);
     z-index: 1;
 }
 
-#loginForm.log {
+#upForm.log {
     z-index: 0;
     transform: scale(1);
 }
-#loginForm.log .loginBox {
-    background: rgba(0, 0, 0, 0.0);
+#upForm.log .upBox {
+    background-color: #fefefe;
+    background-image: repeating-radial-gradient(circle at 0 80%, rgba(27, 27, 30, 0.1), rgba(88, 164, 176, 0.15) 1px, rgba(216, 219, 226, 0.2) 2px, rgba(88, 164, 176, 0.15) 3px, rgba(27, 27, 30, 0.1) 4px), radial-gradient(circle at 0 100%, #1b1b1e, #373f51, #58a4b0);
 }
-#loginForm.log .loginBox .login-content {
+#upForm.log .upBox .up-content {
     animation: moveUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
-#loginForm.log + .content {
+#upForm.log + .content {
     z-index: 1;
     animation: slideUpLarge 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
-#loginForm.log.out .loginBox .login-content {
+#upForm.log.out .upBox .up-content {
     animation: moveDown 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
-#loginForm.log.out + .content {
+#upForm.log.out + .content {
     animation: slideDownLarge 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
-#loginForm .loginBox {
+#upForm .upBox {
     display: table-cell;
     background: rgba(0, 0, 0, 0.8);
     text-align: center;
     vertical-align: middle;
 }
-#loginForm .loginBox .login-content {
+#upForm .upBox .up-content {
     width: 300px;
     background-color: #ffffff;
-    opacity: 0.8;
     box-shadow: black;
     padding: 40px;
     display: inline-block;
@@ -60,14 +53,14 @@ main.login-active {
     position: relative;
 }
 
-#loginForm .loginBox .login-content .modal-svg {
+#upForm .upBox .up-content .modal-svg {
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     border-radius: 3px;
 }
-#loginForm .loginBox .login-content .modal-svg rect {
+#upForm .upBox .up-content .modal-svg rect {
     stroke: #fff;
     stroke-width: 2px;
     stroke-dasharray: 778;

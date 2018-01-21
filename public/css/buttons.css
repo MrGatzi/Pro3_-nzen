@@ -1,94 +1,114 @@
-.up {
+.black {
     background: none;
-    border: 2px solid;
+    border: 1.8px solid;
     font: inherit;
     line-height: 1;
-    margin: 0.5em;
     margin-bottom: 30px;
-    padding: 1em 2em;
+    padding: 0.5em 1.5em;
     transition: 0.25s;
-    border-color: #30e2e3;
-    color: #fff;
+    border-color: #1a1a1a;
+    color: #1a1a1a;
     text-decoration: none;
 }
 
-.up:hover,
-.up:focus {
-    box-shadow: inset 0 -3.25em 0 0 #30e2e3;
+.black:hover,
+.black:focus {
+    box-shadow: inset 0 -3.25em 0 0 #1a1a1a;
     text-decoration: none;
     color: white;
 }
 
-.button {
-    border: 0;
+.white {
     background: none;
-    padding-right: 25px;
-    padding-left: 25px;
-    color: #ffffff;
-    opacity: 0.2;
+    border: 1.8px solid;
+    font: inherit;
+    line-height: 1;
+    margin-bottom: 30px;
+    padding: 0.5em 1.5em;
+    transition: 0.25s;
+    border-color: white;
+    color: white;
+    text-decoration: none;
 }
 
-.button:hover,
-.button:focus {
-    border: 0;
-    opacity: 1;
-    color: #30e2e3;
+.white:hover,
+.white:focus {
+    box-shadow: inset 0 -3.25em 0 0 white;
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+.black_width {
+    background: none;
+    border: 1.8px solid;
+    font: inherit;
+    line-height: 1;
+    width: 220px;
+    margin-bottom: 30px;
+    padding: 0.5em 1.5em;
+    transition: 0.25s;
+    border-color: var(--black);
+    color: var(--black);
+    text-decoration: none;
+}
+
+.black_width:hover,
+.black_width:focus {
+    box-shadow: inset 0 -3.25em 0 0 var(--black);
+    text-decoration: none;
+    color: white;
 }
 
 .link {
-    border: 0;
-    background: transparent;
-    padding-right: 25px;
-    padding-left: 25px;
-    color: #ffffff;
-    opacity: 0.2;
-    text-decoration: none;
-}
+     background: none;
+     border: 1.8px solid;
+     font: inherit;
+     line-height: 1;
+     margin-bottom: 30px;
+     padding: 0.4em 1.5em;
+     transition: 0.25s;
+     border-color: white;
+     color: white;
+     text-decoration: none;
+ }
 
 .link:hover,
 .link:focus {
+    box-shadow: inset 0 -3.25em 0 0 white;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.button {
+     text-decoration: none;
+     border: 0;
+     background: none;
+     padding-right: 25px;
+     padding-left: 25px;
+     color: var(--black);
+     opacity: 0.4;
+ }
+
+.button:hover,
+.button:focus {
+    text-decoration: none;
+    color: var(--color);
     border: 0;
     opacity: 1;
-    color: #30e2e3;
+}
+
+.info {
     text-decoration: none;
-}
-
-.none {
     border: 0;
     background: none;
-    color: #30e2e3;
+    padding-right: 25px;
+    padding-left: 25px;
+    color: var(--black);
+    opacity: 0.4;
 }
 
-.none:hover,
-.none:focus {
+.info:hover,
+.info:focus {
     border: 0;
-    color: white;
-}
-
-.reverse {
-    border: 0;
-    background: none;
-    color: white;
-    margin-top: 30px;
-}
-
-.reverse:hover,
-.reverse:focus {
-    border: 0;
-    color: #30e2e3;
-}
-
-.hidden {
-    display: none;
-}
-
-.change:hover,
-.change:focus {
-    color: #ffffff;
-    opacity: 0.2;
-}
-
-.remove {
-    margin-left: 2px;
-    margin-right: 30px;
+    opacity: 1;
 }

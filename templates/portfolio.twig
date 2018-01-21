@@ -5,24 +5,41 @@
 </head>
 
 <body>
-    <main>
-        <h1 class="offset-lg-3 col-lg-6 offset-lg-3 offset-sm-2 col-sm-8 offset-sm-2">Hello <button class="none">{{ username }}</button>!</h1>
-        <p id="explanation" class="offset-lg-2 col-lg-8 offset-lg-2 offset-sm-1 col-sm-10 offset-sm-1">
-            Welcome back.
-            <br>Look at the <a class="info" href="#statistic">statistics</a>.
-        </p>
 
-        <p>Your portfolio is worth :</p>
-        <p id="user_worth"></p>
-        <select id="fiatoption" name="money"></select>
-        <section>
+<div class="container">
+    <div class="row">
+        <div class="space col-12"></div>
+    </div>
+</div>
+
+<header>
+    <div class="offset-8 col-4">
+        <button class="user white">PROFIL</button>
+    </div>
+
+    <div>
+        <img id="logo" class="image hidden-xs" src="images/logo_large_w.png" height="485" width="172">
+        <div class="text offset-lg-2 col-lg-8 offset-lg-2 offset-md-2 col-md-9 offset-sm-3 col-sm-8">
+            <h1 class="user">HELLO {{ username }}!</h1>
+            <p>Your portfolio is worth: </p>
+            <div class="row col-12">
+                <p id="user_worth"></p>
+                <select id="fiatoption" name="money"></select>
+            </div>
+            <p>Look at the <a href="#statistic">statistics</a>.</p>
+        </div>
+    </div>
+</header>
+
+<main>
+        <section class="simple">
             <h3>PORTFOLIO</h3>
             <!-- Einbindung Datenbank -->
         </section>
 
         <button class="addSection button">ADD CHANGES</button>
 
-        <section id="change">
+        <section class="simple" id="change">
                 <fieldset>
                     <div id="portfolio" class="container">
                         {% for x in tUserDaten %}
@@ -37,7 +54,7 @@
                                      {% endif %}
                                 {% endfor %}
                             </select>
-                            <p  name="CurrencyRowValue" class="change button">{{ Change }}</p>
+                            <p  name="CurrencyRowValue" class="change info">{{ Change }}</p>
                             <button class="button remove" type="button" name="remove">x</button>
                         </div>
                         {% endfor %}
@@ -49,7 +66,7 @@
                 </fieldset>
 
                 <fieldset id="save">
-                    <button id='safe_button'class="up submit" type="submit" name="save" value='{{test}}'>SAVE</button>
+                    <button id='safe_button' class="black submit" type="submit" name="save" value='{{test}}'>SAVE</button>
                 </fieldset>
                 <button class="closeSection button" type="button">CLOSE</button>
         </section>
@@ -64,60 +81,54 @@
 
         <section id="logout">
             <form action="login/logout.php">
-            <button class="up submit" type="submit" name="save">Logout</a> </button>
+            <button class="black submit" type="submit" name="save">Logout</button>
             </form>
         </section>
 
     </main>
-    <div id="userForm">
-        <div class="userBox">
-            <div class="user-content">
+    <div id="upForm">
+        <div class="upBox">
+            <div class="up-content">
                 <button class="offset-8" id="close">CLOSE</button>
                 <h2>PROFIL</h2>
                 <p>What would you like to do, {{ username }}?</p>
-                <button>Change my name</button>
-                <div class="usernameChange">
-                    <form method="post" action="??">
-                        <p>How may I address you?</p>
-                        <fieldset id="input">
-                            <input id="newName" type="text" name="newName" required>
-                        </fieldset>
-                        <fieldset id="action">
-                            <button class="up" type="submit" name="submit" value="Change">CHANGE</button>
-                        </fieldset>
-                    </form>
-                </div>
-                <button>Change my password</button>
-                <div class="passwortChange">
+                <button id="name" class="black_width">CHANGE MY NAME</button>
+                <div id="usernameChange">
                     <form method="post" action="??">
                         {% if error == true %}
                             <fieldset>
                                 <p class="error">Sorry, something went wrong.<br>Please try again:</p>
                             </fieldset>
                         {% endif %}
-                        <p>Please enter your old password:</p>
                         <fieldset id="input">
-                            <input id="oldpassword" type="password" name="oldPassword" required>
-                        </fieldset>
-                        <p>Please enter your new password:</p>
-                        <fieldset id="input">
-                            <input id="newpassword" type="password" name="newPassword" required>
-                            <input id="repeatpassword" type="password" name="repeatPassword" required>
+                            <label>How may I address you?</label>
+                            <input id="newName" type="text" name="newName" required>
                         </fieldset>
                         <fieldset id="action">
-                            <button class="up" type="submit" name="submit" value="Change">CHANGE</button>
+                            <button class="black" type="submit" name="submit" value="Change">CHANGE</button>
                         </fieldset>
                     </form>
                 </div>
-                <button>Change currency</button>
-                <div class="currencyChange">
+                <button id="password" class="black_width">CHANGE MY PASSWORD</button>
+                <div id="passwortChange">
                     <form method="post" action="??">
-                        <p>Please select a currency:</p>
+                        {% if error == true %}
+                            <fieldset>
+                                <p class="error">Sorry, something went wrong.<br>Please try again:</p>
+                            </fieldset>
+                        {% endif %}
                         <fieldset id="input">
-                            <select id="fiatoption" name="money"></select>
+                            <label>Please enter your old password:</label>
+                            <input id="oldpassword" type="password" name="oldPassword" required>
+                        </fieldset>
+                        <fieldset id="input">
+                            <label>Please enter your new password:</label>
+                            <input id="newpassword" type="password" name="newPassword" required>
+                            <label>Please confirm your password:</label>
+                            <input id="repeatpassword" type="password" name="repeatPassword" required>
                         </fieldset>
                         <fieldset id="action">
-                            <button class="up" type="submit" name="submit" value="Change">CHANGE</button>
+                            <button class="black" type="submit" name="submit" value="Change">CHANGE</button>
                         </fieldset>
                     </form>
                 </div>

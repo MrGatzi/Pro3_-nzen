@@ -6,92 +6,87 @@
 </head>
 
 <body>
-<main>
     <div class="container">
         <div class="row">
             <div class="space col-12"></div>
         </div>
     </div>
 
-    <header class="offset-lg-3 col-lg-6 offset-lg-3 offset-md-2 col-md-8 offset-md-2">
-        <nav class="container">
-            <div class="navbar row">
-                <button class="nav"><a href="templates/about.html">ABOUT</a></button>
-                <img id="logo" src="images/logo_w.png" height="130" width="163">
-                <button class="login nav">SIGN IN</button>
+    <header>
+        <div class="offset-8 col-4">
+            <button class="login white">SIGN IN</button>
+        </div>
+
+        <div>
+            <img id="logo" class="image hidden-xs" src="images/logo_large_w.png" height="485" width="172">
+            <div class="text offset-lg-2 col-lg-7 offset-lg-2 offset-md-2 col-md-9 offset-md-1 offset-sm-3 col-sm-8 offset-sm-1">
+                <h1>CRYPTOCURRENCY CALCULATOR</h1>
+                <p class="explanation">
+                    µnzen is a cryptocurrency exchange rate calculator and conversion tool,
+                    which allows to instantly convert almost every cryptocurrency into fiat money.
+                </p>
+                <a class="link" href="templates/about.html">ABOUT</a>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <h1 class="offset-lg-3 col-lg-6 offset-lg-3 offset-sm-2 col-sm-8 offset-sm-2">Cryptocurrency calculator</h1>
-    <p id="explanation" class="offset-lg-2 col-lg-8 offset-lg-2 offset-sm-1 col-sm-10 offset-sm-1">
-        µnzn is a cryptocurrency exchange rate calculator and conversion tool,
-        which allows to instantly convert almost every cryptocurrency into fiat money.
-        <br><br>Join us and easily manage different cryptocurrencies in your personal account.
-    </p>
+    <main>
+        <p class="offset-lg-2 col-lg-8 offset-lg-2 offset-sm-1 col-sm-10 offset-sm-1">
+            Join us and easily manage different cryptocurrencies in your personal account.
+        </p>
 
+        <form id="calculator" method="post">
 
-    <form id="calculator" method="post">
+            <fieldset>
+                <div id="portfolio" class="container">
+                </div>
+            </fieldset>
 
-        <fieldset>
-            <div id="portfolio" class="container">
-<!--             <div class="newCurrency row">
-                    <div class="newCurrency row">
-                        <input class="amount" type="text" name="amount" value="0">
-                        <select class="portfolio_values" name="currency"><option>BTC</option></select>
-                        <p class="change button">3203.92</p>
-                        <button class="button remove" type="button" name="remove">x</button>
+            <fieldset>
+                <button id="add" class="button" type="button" name="add">ADD CRYPTOCURRENCY</button>
+            </fieldset>
+
+            <fieldset>
+                <div id="totalSum" class="container">
+                    <div class="sum row">
+                        <select id="fiatoption" name="money"></select>
+                        <div class="output">0</div>
                     </div>
                 </div>
--->
-            </div>
-        </fieldset>
+            </fieldset>
 
-        <fieldset>
-            <button id="add" class="button" type="button" name="add">ADD CRYPTOCURRENCY</button>
-        </fieldset>
+            <fieldset>
+                <button class="black login" type="button" name="save">SAVE</button>
+            </fieldset>
+        </form>
+    </main>
 
-        <fieldset>
-            <div id="totalSum" class="container">
-                <div class="sum row">
-                    <select id="fiatoption" name="money"></select>
-                    <div class="output">0</div>
-                </div>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <button class="up login" type="button" name="save">SAVE</button>
-        </fieldset>
-    </form>
-
-</main>
-
-<div id="loginForm">
-    <div class="loginBox">
-        <div class="login-content">
+<div id="upForm">
+    <div class="upBox">
+        <div class="up-content">
             <button class="offset-8" id="close">CLOSE</button>
             <h2>WELCOME BACK</h2>
-            <p>LOGIN TO YOUR ACCOUNT</p>
+            <p class="spaceAfter">LOGIN TO YOUR ACCOUNT</p>
             <!-- Displaying error message -->
             {% if error == true %}
                 <fieldset>
-                    <p class="error">Incorrect username or password!<br>Please try again:</p>
+                    <p class="error">Sorry, something went wrong.<br>Please try again:</p>
                 </fieldset>
             {% endif %}
             <form method="post" action="login/checklogin.php">
                 <fieldset id="input">
-                    <input id="myemail" type="text" name="myemail" placeholder="EMAIL ADDRESS" required>
-                    <input id="mypassword" type="password" name="mypassword" placeholder="PASSWORD" required>
+                    <label>EMAIL ADDRESS</label>
+                    <input id="myemail" type="text" name="myemail" required>
+                    <label>PASSWORD</label>
+                    <input id="mypassword" type="password" name="mypassword" required>
+                    <div class="underline"></div>
                 </fieldset>
                 <fieldset id="action">
-                    <button class="up" type="submit" name="submit" value="SIGN IN">SIGN IN</button>
+                    <button class="black" type="submit" name="submit" value="SIGN IN">SIGN IN</button>
                 </fieldset>
             </form>
-            <p>or</p>
-            <div id="register"><a id="registerlink">Create a portfolio</a></div>
+            <div id="register"><a href="register.php">CREATE A PORTFOLIO</a></div>
         </div>
     </div>
 </div>
-
 </body>

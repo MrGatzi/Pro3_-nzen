@@ -1,97 +1,73 @@
-/*form {
+input {
+    box-sizing: border-box;
+    justify-content: center;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid;
+    border-color: var(--black);
+    color: var(--black);
+    outline: 0;
     text-align: center;
+    width: 280px;
+    margin-bottom: 20px;
+    font-size: 17px;
 }
 
-fieldset {
-    position:relative;
-    margin-bottom:45px;
-}
 label {
-    color:rgba(255,255,255, 0.5);
-    font-size:18px;
-    font-weight:normal;
-    position:absolute;
-    pointer-events:none;
-    left:5px;
-    top:5px;
-    -o-transition:0.2s ease all;
-    transition:0.2s ease all;
-    -moz-transition:0.2s ease all;
-    -webkit-transition:0.2s ease all;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
-label input {
-    font-size:18px;
-    padding:10px 10px 10px 10px;
-    display:block;
-    width:100%;
-    border:none;
-    border-bottom:1px solid rgba(255,255,255, 0.3);
-    background:none;
-    color:#eee;
+input:focus {
+    color: var(--color);
 }
 
-label input:focus {
-    outline:none;
+#upForm input {
+    width: 220px;
 }
 
-input:focus ~ label, input:valid ~ label {
-    top:-20px;
-    font-size:14px;
-    color:rgba(255,255,255, 0.7);
+#calculator input {
+     width: 70px;
+     background-color: transparent;
+     text-align: right;
+     border: none;
+     display: block;
+     margin: 10px;
+     padding: 5px;
+     border: 0;
+     color: #1a1a1a;
+     margin-right: 2px;
+     margin-left: 0;
+     padding-left: 0;
+ }
+
+#calculator input[type=number]::-webkit-inner-spin-button,
+#calculator input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
 }
 
-.bar 	{
-    position:relative;
-    display:block; width:100%;
+.simple input {
+    width: 70px;
+    background-color: transparent;
+    text-align: right;
+    border: none;
+    display: block;
+    margin: 10px;
+    padding: 5px;
+    border: 0;
+    color: #1a1a1a;
+    margin-right: 2px;
+    margin-left: 0;
+    padding-left: 0;
 }
 
-.bar:before, .bar:after 	{
-    content:'';
-    height:2px;
-    width:0;
-    bottom:1px;
-    position:absolute;
-    background:rgba(255,255,255, 0.7);
-    -o-transition:0.2s ease all;
-    transition:0.2s ease all;
-    -moz-transition:0.2s ease all;
-    -webkit-transition:0.2s ease all;
+.simple input[type=number]::-webkit-inner-spin-button,
+.simple input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
 }
-
-.bar:before {
-    left:50%;
-}
-
-.bar:after {
-    right:50%;
-}
-
-input:focus ~ .bar:before, .group input:focus ~ .bar:after {
-    width:50%;
-}
-
-.highlight {
-    position:absolute;
-    height:0%;
-    width:100px;
-    top:25%;
-    left:0;
-    pointer-events:none;
-    opacity:0.5;
-}
-
-input:focus ~ .highlight {
-    -webkit-animation:inputHighlighter 0.3s ease;
-    animation:inputHighlighter 0.3s ease;
-}
-
-@-webkit-keyframes inputHighlighter {
-    from { background:rgba(255,255,255, 0.7); }
-    to 	{ width:0; background:transparent; }
-}
-@keyframes inputHighlighter {
-    from { background:rgba(255,255,255, 0.7); }
-    to 	{ width:0; background:transparent; }
-}
-*/
