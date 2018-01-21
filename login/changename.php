@@ -10,15 +10,14 @@ $username = $_POST['newName'];
 $username = stripslashes($username);
 
         $a = new ChangeUserForm();
-
-        $response = $a->changeUserName($username, $iduser);
+        $response = $a->changeUserName($iduser, $username);
 
         //Success
         if ($response == 'true') {
             $_SESSION['username'] = htmlspecialchars($username);
             ob_end_flush();
             //save data
-            header('Location:../index.php');
+            //header('Location:../index.php');
             exit();
 
         } else {

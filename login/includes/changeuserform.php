@@ -12,7 +12,6 @@ class ChangeUserForm extends DbConn
             $stmt->bindParam(':username', $username);
             $stmt->bindParam(':iduser', $iduser);
             $stmt->execute();
-
             $err = '';
 
         } catch (PDOException $e) {
