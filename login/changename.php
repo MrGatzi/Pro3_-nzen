@@ -17,7 +17,7 @@ $username = stripslashes($username);
             $_SESSION['username'] = htmlspecialchars($username);
             ob_end_flush();
             //save data
-            //header('Location:../index.php');
+            header('Location:../index.php');
             exit();
 
         } else {
