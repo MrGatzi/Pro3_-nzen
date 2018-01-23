@@ -11,7 +11,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 }
 
 else if(isset($_SESSION['registerErr'])){
-    echo $twig->render('register.twig', array('error' => $_SESSION['registerErr']));
+    echo $twig->render('register.twig', array('registerErr' => $_SESSION['registerErr']));
 }else{
     echo $twig->render('register.twig');
 }

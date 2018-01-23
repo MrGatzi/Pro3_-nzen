@@ -67,6 +67,7 @@ if($newuser === $getData->getUserData($newuser, "email")){
 
 function errorExit(){
     ob_end_flush();
+    unset($_SESSION['error']);
     header('Location:../register.php');
     exit();
 }
