@@ -4,9 +4,9 @@ select {
     border-radius: 4px;
     font: inherit;
     line-height: 1.5em;
-    padding: 0.5em 3.5em 0.5em 1em;
+    padding: 0.5em 3.5em 0.5em 1.3em;
     color: #1a1a1a;
-    padding-left: 40px;
+    padding-left: 20px;
 
     margin: 0;
     -webkit-box-sizing: border-box;
@@ -14,6 +14,10 @@ select {
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+
+.simple select {
+    margin-left: 25px;
 }
 
 select {
@@ -31,8 +35,8 @@ select {
 
 select:focus {
     background-image:
-            linear-gradient(45deg, #25dd93 50%, transparent 50%),
-            linear-gradient(135deg, transparent 50%, #25dd93 50%);
+            linear-gradient(45deg, var(--color) 50%, transparent 50%),
+            linear-gradient(135deg, transparent 50%, var(--color) 50%);
     background-position:
             calc(100% - 45px) 1em,
             calc(100% - 50px) 1em;
@@ -40,61 +44,11 @@ select:focus {
             5px 5px,
             5px 5px;
     background-repeat: no-repeat;
-    border-color: #25dd93;
+    border-color: var(--color);
     outline: 0;
 }
 
 select:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #000;
-}
-
-.text select {
-    background-color: transparent;
-    border: none;
-    border-radius: 4px;
-    font: inherit;
-    line-height: 1.5em;
-    color: white;
-    padding-top: 0.2px;
-
-    margin: -15px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-.text select {
-    background-image:
-            linear-gradient(45deg, transparent 50%, white 50%),
-            linear-gradient(135deg, white 50%, transparent 50%);
-    background-position:
-            calc(100% - 50px) calc(1em + 1px),
-            calc(100% - 45px) calc(1em + 1px);
-    background-size:
-            5px 6px,
-            5px 6px;
-    background-repeat: no-repeat;
-}
-
-.text select:focus {
-    background-image:
-            linear-gradient(45deg, white 50%, transparent 50%),
-            linear-gradient(135deg, transparent 50%, white 50%);
-    background-position:
-            calc(100% - 45px) 1em,
-            calc(100% - 50px) 1em;
-    background-size:
-            5px 5px,
-            5px 5px;
-    background-repeat: no-repeat;
-    border-color: white;
-    outline: 0;
-}
-
-.text select:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 #000;
 }

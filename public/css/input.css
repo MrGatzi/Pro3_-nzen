@@ -49,8 +49,13 @@ input:focus {
     margin: 0;
 }
 
+#overview input {
+    padding-left: 0;
+    width: 30px;
+    padding-right: 10px;
+}
 .simple input {
-    width: 70px;
+    width: 80px;
     background-color: transparent;
     text-align: right;
     border: none;

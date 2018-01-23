@@ -15,8 +15,7 @@ body {
 
     background-color: #fefefe;
     background-image: repeating-radial-gradient(circle at 0 80%, rgba(27, 27, 30, 0.1), rgba(88, 164, 176, 0.15) 1px, rgba(216, 219, 226, 0.2) 2px, rgba(88, 164, 176, 0.15) 3px, rgba(27, 27, 30, 0.1) 4px), radial-gradient(circle at 0 100%, #1b1b1e, #373f51, #58a4b0);
-    background-size: 100vw 80vh;
-
+    background-size: 100vw 90vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Barlow Condensed', sans-serif;
@@ -30,11 +29,11 @@ main {
     padding-bottom: 1vh;
     background-color: #fefefe;
     color: var(--black);
+    height: 100%;
 }
 
 .bg {
-    background-color: #1a1a1a;
-    background-image: repeating-radial-gradient(circle at 0 80%, rgba(27, 27, 30, 0.1), rgba(88, 164, 176, 0.15) 1px, rgba(216, 219, 226, 0.2) 2px, rgba(88, 164, 176, 0.15) 3px, rgba(27, 27, 30, 0.1) 4px), radial-gradient(circle at 0 100%, #1b1b1e, #373f51, #58a4b0);
+    background-image: repeating-radial-gradient(circle at 0 80%, rgba(20, 20, 23, 0.1), rgba(64, 116, 128, 0.15) 1px, rgba(216, 219, 226, 0.2) 2px, rgba(88, 164, 176, 0.15) 3px, rgba(27, 27, 30, 0.1) 4px), radial-gradient(circle at 0 100%, #1a1a1a, #0e0e1e, #0c0c0f);
     background-size: 100vw 100vh;
     color: var(--black);
 }
@@ -44,7 +43,8 @@ header {
 }
 
 h1 {
-    margin-top: 5vh;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 h2 {
@@ -57,6 +57,13 @@ h3 {
     padding-bottom: 20px;
 }
 
+h4 {
+    font-size: 1.7em;
+    margin-top: 5vh;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
 a {
      color: var(--color);
 }
@@ -67,19 +74,35 @@ a:focus {
     color: white;
 }
 
+.about a:hover,
+.about a:focus {
+    text-decoration: none;
+    color: var(--light);
+}
+
+.simple a:hover,
+.simple a:focus {
+    text-decoration: none;
+    color: var(--light);
+}
+
 .image {
     z-index: -1;
     position: absolute;
     left: 8vw;
 }
 
-.dark {
+.simple {
+    text-align: center;
+}
+
+#split {
     padding-top: 18vh;
     padding-bottom: 1vh;
     margin-top: 10vh;
     height: 80vh;
     box-sizing: border-box;
-    background-color: var(--black);
+    background-image: repeating-radial-gradient(circle at 0 80%, rgba(14, 14, 17, 0.1), rgba(88, 164, 176, 0.15) 1px, rgba(216, 219, 226, 0.2) 2px, rgba(88, 164, 176, 0.15) 3px, rgba(27, 27, 30, 0.1) 4px), radial-gradient(circle at 0 100%, #1b1b1e, #373f51, #58a4b0);
     color: white;
 }
 
@@ -98,7 +121,23 @@ a:focus {
     margin-top: 10vh;
     height: 80vh;
     padding-top: 15vh;
+    color: var(--black);;
     background-color: white;
+}
+
+.only {
+    margin-top: 0;
+    height: 100vh;
+    padding-top: 7vh;
+    vertical-align: middle;
+}
+
+#show h1 {
+    margin-top: 20px;
+}
+
+#show p {
+    margin-bottom: 30px;
 }
 
 .space {
@@ -110,8 +149,8 @@ a:focus {
 }
 
 .between {
-    margin-top: 10px;
-    margin-bottom: 26px;
+    margin-top: 26px;
+    margin-bottom: 40px;
 }
 
 .text {
@@ -140,6 +179,11 @@ a:focus {
 #save {
     margin-top: 20px;
 }
+
+.subtitle {
+    font-size: 50px;
+}
+
 .error {
     color: var(--color);
     margin-bottom: 10px;
@@ -155,6 +199,10 @@ a:focus {
 .sum {
     box-sizing: border-box;
     justify-content: center;
+}
+
+input.amount {
+    margin-right: 2px;
 }
 
 .output {
@@ -175,6 +223,10 @@ a:focus {
     display: none;
 }
 
+.short {
+    margin-bottom: -60px;
+}
+
 .change {
     background-color: transparent;
     text-align: right;
@@ -188,7 +240,11 @@ a:focus {
     margin-left: 0;
     padding-left: 0;
     border: 0;
-    color: white;
+    color: var(--black);
+}
+
+#overview .change {
+    padding-right: 20px;
 }
 
 textarea:focus, input:focus{
@@ -205,7 +261,7 @@ textarea:focus, input:focus{
     margin-top: -18px;
     margin-bottom: -18px;
     padding-right: 25px;
-    padding-left: 25px;
+    padding-left: 16px;
     color: #ffffff;
     font-size: 50px;
 }

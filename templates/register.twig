@@ -2,10 +2,11 @@
 <title>Create your portfolio</title>
 </head>
 <script src='{{"public/js/signup.js"}}'></script>
-<body class="bg">
+<body id="cover" class="bg">
 
-    <main class="dark offset-lg-1 col-lg-5 col-md-6 col-sm-12 float-left">
-        <img id="logo" src="images/logo_w.png" height="131" width="163">
+    <main id="split" class="offset-lg-1 col-lg-5 col-md-6 col-sm-12 float-left">
+        <img id="logo" src="images/logo_w.png" height="131" width="160">
+        <h4></h4>
         <h1>CREATE YOUR PORTFOLIO</h1>
         <p>
             Join us and manage all your cryptocurrencies.
@@ -14,8 +15,14 @@
         <button class="login white">SIGN IN</button>
 
     </main>
-    <div class="split col-lg-5 col-md-6 float-left">
+    <div id="form" class="split col-lg-5 col-md-6 float-left">
         <div>
+            <div id="show" class="hidden">
+                <h1>CREATE A PORTFOLIO</h1>
+                <p class="offset-1 col-10">
+                    Join us and manage all your cryptocurrencies.
+                </p>
+            </div>
             <form class="register" id="register" name="register" method="post" action='login/newuser.php'>
                 <!-- Displaying error message -->
                 {% if error is defined %}
@@ -37,7 +44,7 @@
                     <label class="col-12">CONFIRM PASSWORD</label>
                     <input type="password" name="confirmPassword" id="confirmPassword">
                 </fieldset>
-                <button class="black create" type="submit" name="submit" id="submit">CREATE MY PORTFOLIO</button>
+                <button class="black_width create" type="submit" name="submit" id="submit">CREATE MY PORTFOLIO</button>
             </form>
         </div>
     </div>

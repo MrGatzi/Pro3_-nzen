@@ -1,4 +1,11 @@
+button:focus, button:active:focus, button.active:focus,
+button.focus, button:active.focus, button.active.focus {
+    outline: none;
+    box-shadow:none;
+}
+
 .black {
+    width: 110px;
     background: none;
     border: 1.8px solid;
     font: inherit;
@@ -19,6 +26,21 @@
 }
 
 .white {
+    width: 110px;
+    background: none;
+    border: 1.8px solid;
+    font: inherit;
+    line-height: 1;
+    margin-bottom: 30px;
+    padding: 0.5em 1.5em;
+    transition: 0.25s;
+    border-color: white;
+    color: white;
+    text-decoration: none;
+}
+
+.white_width {
+    width: 140px;
     background: none;
     border: 1.8px solid;
     font: inherit;
@@ -58,18 +80,24 @@
     text-decoration: none;
     color: white;
 }
+.clicked {
+    box-shadow: inset 0 -3.25em 0 0 var(--black);
+    text-decoration: none;
+    color: white;
+}
 
 .link {
-     background: none;
-     border: 1.8px solid;
-     font: inherit;
-     line-height: 1;
-     margin-bottom: 30px;
-     padding: 0.4em 1.5em;
-     transition: 0.25s;
-     border-color: white;
-     color: white;
-     text-decoration: none;
+    width: 110px;
+    background: none;
+    border: 1.8px solid;
+    font: inherit;
+    line-height: 1;
+    margin-bottom: 20px;
+    padding: 0.4em 1.5em;
+    transition: 0.25s;
+    border-color: white;
+    color: white;
+    text-decoration: none;
  }
 
 .link:hover,

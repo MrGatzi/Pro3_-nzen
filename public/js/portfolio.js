@@ -3,11 +3,13 @@ $(document).ready(function () {
     $('.addSection').click(function () {
         $('#change').removeClass('hidden');
         $('.addSection').addClass('hidden');
+        $('#overview').addClass('hidden');
     });
 
     $('.closeSection').click(function () {
         $('#change').addClass('hidden');
         $('.addSection').removeClass('hidden');
+        $('#overview').removeClass('hidden');
     });
 
     $('#change').addClass('hidden');

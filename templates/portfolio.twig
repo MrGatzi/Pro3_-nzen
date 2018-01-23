@@ -14,27 +14,47 @@
 
 <header>
     <div class="offset-8 col-4">
-        <button class="user white">ACCOUNT</button>
+        <button class="user white_width">ACCOUNT</button>
     </div>
 
     <div>
-        <img id="logo" class="image hidden-xs" src="images/logo_large_w.png" height="485" width="172">
+        <img id="logo" class="image" src="images/logo_large_w.png" height="540" width="183">
         <div class="text offset-lg-2 col-lg-8 offset-lg-2 offset-md-2 col-md-9 offset-sm-3 col-sm-8">
+            <h4></h4>
             <h1 class="user">HELLO {{ username }}!</h1>
-            <p>Your portfolio is worth: </p>
-            <div class="row col-12">
-                <p id="user_worth"></p>
-                <select id="fiatoption" name="money"></select>
-            </div>
-            <p>Look at the <a href="#statistic">statistics</a>.</p>
         </div>
     </div>
 </header>
 
 <main>
         <section class="simple">
-            <h3>PORTFOLIO</h3>
-            <!-- Einbindung Datenbank -->
+            <p>Your portfolio is worth: </p>
+            <div>
+                <h1 id="user_worth"></h1>
+                <select id="fiatoption" name="money"></select>
+            </div>
+            <p>Look at the <a href="#statistic">statistics</a>.</p>
+
+            <h3 class="space">PORTFOLIO</h3>
+            <fieldset id="overview">
+                <div id="portfolio" class="container">
+                    {% for x in tUserDaten %}
+                        <div class="newCurrency row">
+                            <input class="amount" type="number" name="amount" value="{{ x.value }}">
+                            <select class="portfolio_values" name="currency">
+                                {% for i in tCryptoDaten %}
+                                    {% if i.symbol == x.symbol %}
+                                        <option class="portfolio_curr" value="{{ i.value }}" selected="true">{{ i.symbol }}</option>
+                                    {% else %}
+                                        <option class="portfolio_curr" value="{{ i.value }}">{{ i.symbol }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                            <p name="CurrencyRowValue" class="change">{{ Change }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </fieldset>
         </section>
 
         <button class="addSection button">ADD CHANGES</button>
@@ -73,7 +93,7 @@
 
 
 
-        <section id="statistic">
+        <section id="statistic" class="space">
             <h3>STATISTICS</h3>
             <!-- Graphen -->
             {% include 'piechart.twig' %}
