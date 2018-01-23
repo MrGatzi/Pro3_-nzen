@@ -28,7 +28,7 @@
             <form class="register" id="register" name="register" method="post" action='login/newuser.php'>
                 <!-- Displaying error message -->
                 {% if registerErr is defined %}
-                    <fieldset>
+                    <fieldset class="space">
                         <p class="error">{{ registerErr }}<br>Please try again:</p>
                     </fieldset>
                 {% endif %}
