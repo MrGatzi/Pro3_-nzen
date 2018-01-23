@@ -26,7 +26,6 @@ if(strlen($newPassword) < 5){
         $_SESSION['pwdChange'] = "Old password is wrong";
         error();
     }else if($a->updatePassword($iduser, $newpw) === 'true'){
-    $_SESSION['loggedin'] = false;
     ob_end_flush();
     header('Location:../index.php');
     exit();

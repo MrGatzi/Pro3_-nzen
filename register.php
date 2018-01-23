@@ -7,7 +7,8 @@ $loader = new Twig_Loader_Filesystem('templates');
 $twig = new Twig_Environment($loader);
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    echo $twig->render('portfolio.twig', array('username' => $_SESSION['username'],'tUserDaten' => $tUserDaten,'tCryptoDaten'=>$tCryptoDaten,'tUsdDaten'=>$tUsdDaten));
+    header('Location:index.php');
+    exit();
 }
 
 else if(isset($_SESSION['registerErr'])){
