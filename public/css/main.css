@@ -64,6 +64,11 @@ h4 {
     margin-bottom: 0;
 }
 
+h5 {
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+
 a {
      color: var(--color);
 }
@@ -225,6 +230,15 @@ input.amount {
 
 .short {
     margin-bottom: -60px;
+}
+
+.middle {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.start {
+    margin-left: 40px;
 }
 
 .change {

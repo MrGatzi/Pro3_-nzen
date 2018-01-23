@@ -28,33 +28,13 @@
 
 <main>
         <section class="simple">
-            <p>Your portfolio is worth: </p>
+            <h3>PORTFOLIO</h3>
+            <p class="space">Your portfolio is worth: </p>
             <div>
                 <h1 id="user_worth"></h1>
                 <select id="fiatoption" name="money"></select>
             </div>
-            <p>Look at the <a href="#statistic">statistics</a>.</p>
-
-            <h3 class="space">PORTFOLIO</h3>
-            <fieldset id="overview">
-                <div id="portfolio" class="container">
-                    {% for x in tUserDaten %}
-                        <div class="newCurrency row">
-                            <input class="amount" type="number" name="amount" value="{{ x.value }}">
-                            <select class="portfolio_values" name="currency">
-                                {% for i in tCryptoDaten %}
-                                    {% if i.symbol == x.symbol %}
-                                        <option class="portfolio_curr" value="{{ i.value }}" selected="true">{{ i.symbol }}</option>
-                                    {% else %}
-                                        <option class="portfolio_curr" value="{{ i.value }}">{{ i.symbol }}</option>
-                                    {% endif %}
-                                {% endfor %}
-                            </select>
-                            <p name="CurrencyRowValue" class="change">{{ Change }}</p>
-                        </div>
-                    {% endfor %}
-                </div>
-            </fieldset>
+            <p class="spaceAfter">Look at the <a href="#statistic">statistics</a>.</p>
         </section>
 
         <button class="addSection button">ADD CHANGES</button>
@@ -124,7 +104,7 @@
                         </fieldset>
                     </form>
                 </div>
-                <button id="password" class="black_width">CHANGE MY PASSWORD</button>
+                <button id="changePassword" class="black_width">CHANGE MY PASSWORD</button>
                 {% if error is defined %}
                 <div id="passwortChange">
                     {% else %}

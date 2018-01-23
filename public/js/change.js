@@ -14,15 +14,14 @@ $(document).ready(function(){
     $('#name').click(function () {
         $('#usernameChange').removeClass('hidden');
         $('#passwortChange').addClass('hidden');
-        $('#passwortChange').addClass('hidden');
         $('#name').addClass('clicked');
-        $('#password').removeClass('clicked');
+        $('#changePassword').removeClass('clicked');
     });
 
-    $('#password').click(function () {
+    $('#changePassword').click(function () {
         $('#usernameChange').addClass('hidden');
         $('#passwortChange').removeClass('hidden');
-        $('#password').addClass('clicked');
+        $('#changePassword').addClass('clicked');
         $('#name').removeClass('clicked');
     });
 
